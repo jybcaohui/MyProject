@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
 import com.example.kr.myproject.slidingmenu.SlidingMenuActivity;
 
 
@@ -44,9 +45,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id){
+            case R.id.option1:
+                toast("选择了操作1");
+                break;
+            case R.id.option2:
+                Intent intent2=new Intent(MainActivity.this, ActivityWithFragments.class);
+                startActivity(intent2);
+                toast("跳转到fragments页面！");
+                break;
+            case R.id.action_settings:
+                toast("设置属性");
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -71,7 +81,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 },android.os.SystemClock.uptimeMillis()+2*1000);//两秒后执行操作，关闭等待框
                 break;
             case R.id.but2:
-                toast("跳转到功能2页面！");
+                Intent intent2=new Intent(MainActivity.this, ActivityWithFragments.class);
+                startActivity(intent2);
+                toast("跳转到fragments页面！");
                 break;
         }
 

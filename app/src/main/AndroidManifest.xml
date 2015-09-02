@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".slidingmenu.SlidingMenuActivity"/>
+        <activity android:name=".fragmentswithtab.ActivityWithFragments"/>
     </application>
 
 </manifest>
