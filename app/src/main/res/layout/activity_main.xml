@@ -15,6 +15,6 @@
         android:id="@+id/but1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="功能1" />
+        android:text="SlidingMenu" />
 
 </LinearLayout>

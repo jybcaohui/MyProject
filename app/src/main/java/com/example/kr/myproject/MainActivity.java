@@ -1,18 +1,21 @@
 package com.example.kr.myproject;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.example.kr.myproject.slidingmenu.SlidingMenuActivity;
+
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 
-public class MainActivity extends Activity implements View.OnClickListener{
+public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     @InjectView(R.id.but1)
     Button but1;
@@ -46,11 +49,23 @@ public class MainActivity extends Activity implements View.OnClickListener{
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+
             case R.id.but1:
-                Toast.makeText(this,"跳转到功能1",Toast.LENGTH_SHORT).show();
+                showProgressDialog();       //测试等待框的实现
+                Handler handler=new Handler();
+                handler.postAtTime(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent1=new Intent(MainActivity.this, SlidingMenuActivity.class);
+                        startActivity(intent1);
+                        toast("跳转到Slidingmenu页面！");     //BaseActivity 的使用
+                        closeProgressDialog();
+                    }
+                },android.os.SystemClock.uptimeMillis()+2*1000);//两秒后执行操作，关闭等待框
                 break;
         }
     }
