@@ -72,6 +72,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.but2:
                 toast("跳转到功能2页面！");
+                break;
         }
 
     }
