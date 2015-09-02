@@ -1,17 +1,27 @@
 package com.example.kr.myproject;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity implements View.OnClickListener{
 
+    @InjectView(R.id.but1)
+    Button but1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.inject(this);
+        but1.setOnClickListener(this);
     }
 
     @Override
@@ -34,5 +44,14 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.but1:
+                Toast.makeText(this,"跳转到功能1",Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 }
