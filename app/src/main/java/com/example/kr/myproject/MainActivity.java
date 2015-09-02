@@ -19,12 +19,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     @InjectView(R.id.but1)
     Button but1;
+    @InjectView(R.id.but2)
+    Button but2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
         but1.setOnClickListener(this);
+        but2.setOnClickListener(this);
     }
 
     @Override
@@ -67,6 +70,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                     }
                 },android.os.SystemClock.uptimeMillis()+2*1000);//两秒后执行操作，关闭等待框
                 break;
+            case R.id.but2:
+                toast("跳转到功能2页面！");
         }
+
     }
 }
