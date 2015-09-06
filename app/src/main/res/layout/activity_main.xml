@@ -21,5 +21,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="FragmentsWithActivity" />
+    <Button
+        android:id="@+id/but3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="仿QQ双向菜单" />
 
 </LinearLayout>

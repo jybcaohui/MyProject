@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
+import com.example.kr.myproject.qqtwowayslidingmenu.QQMenuActivity;
 import com.example.kr.myproject.slidingmenu.SlidingMenuActivity;
 
 
@@ -22,6 +23,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but1;
     @InjectView(R.id.but2)
     Button but2;
+    @InjectView(R.id.but3)
+    Button but3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         ButterKnife.inject(this);
         but1.setOnClickListener(this);
         but2.setOnClickListener(this);
+        but3.setOnClickListener(this);
     }
 
     @Override
@@ -83,6 +87,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but2:
                 Intent intent2=new Intent(MainActivity.this, ActivityWithFragments.class);
                 startActivity(intent2);
+                toast("跳转到fragments页面！");
+                break;
+            case R.id.but3:
+                Intent intent3=new Intent(MainActivity.this, QQMenuActivity.class);
+                startActivity(intent3);
                 toast("跳转到fragments页面！");
                 break;
         }
