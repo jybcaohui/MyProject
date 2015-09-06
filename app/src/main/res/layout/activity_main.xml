@@ -26,5 +26,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="仿QQ双向菜单" />
+    <Button
+        android:id="@+id/but4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="微信主界面布局" />
 
 </LinearLayout>

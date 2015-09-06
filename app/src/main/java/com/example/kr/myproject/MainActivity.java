@@ -11,6 +11,7 @@ import android.widget.Button;
 import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
 import com.example.kr.myproject.qqtwowayslidingmenu.QQMenuActivity;
 import com.example.kr.myproject.slidingmenu.SlidingMenuActivity;
+import com.example.kr.myproject.weixinmainpage.WeiXinPageActivity;
 
 
 import butterknife.ButterKnife;
@@ -25,6 +26,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but2;
     @InjectView(R.id.but3)
     Button but3;
+    @InjectView(R.id.but4)
+    Button but4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but1.setOnClickListener(this);
         but2.setOnClickListener(this);
         but3.setOnClickListener(this);
+        but4.setOnClickListener(this);
     }
 
     @Override
@@ -92,6 +96,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but3:
                 Intent intent3=new Intent(MainActivity.this, QQMenuActivity.class);
                 startActivity(intent3);
+                toast("跳转到fragments页面！");
+                break;
+            case R.id.but4:
+                Intent intent4=new Intent(MainActivity.this, WeiXinPageActivity.class);
+                startActivity(intent4);
                 toast("跳转到fragments页面！");
                 break;
         }

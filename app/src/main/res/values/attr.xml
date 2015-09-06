@@ -6,4 +6,12 @@
     <declare-styleable name="ViewPagerIndicator">
         <attr name="item_count" />
     </declare-styleable>
+
+    <declare-styleable name="ChangeColorIconView">
+        <attr name="icon" />
+        <attr name="color" />
+        <attr name="text" />
+        <attr name="text_size" />
+    </declare-styleable>
+
 </resources>

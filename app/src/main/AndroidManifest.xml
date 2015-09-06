@@ -22,6 +22,10 @@
             android:name=".qqtwowayslidingmenu.QQMenuActivity"
             android:label="@string/title_activity_qqmenu" >
         </activity>
+        <activity
+            android:name=".weixinmainpage.WeiXinPageActivity"
+            android:label="@string/title_activity_wei_xin_page" >
+        </activity>
     </application>
 
 </manifest>
