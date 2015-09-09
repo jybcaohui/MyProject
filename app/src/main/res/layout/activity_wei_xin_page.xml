@@ -1,9 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    xmlns:ch="http://schemas.android.com/apk/res/com.example.kr.myproject"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".weixinmainpage.WeiXinPageActivity">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/id_viewpager"
@@ -24,9 +25,9 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:padding="5dp"
-            zhy:icon="@drawable/ic_menu_start_conversation"
-            zhy:text="@string/tab_weixin"
-            zhy:text_size="12sp" />
+            ch:weiicon="@drawable/ic_menu_start_conversation"
+            ch:text="@string/tab_weixin"
+            ch:text_size="12sp" />
 
         <com.example.kr.myproject.weixinmainpage.ChangeColorIconWithTextView
             android:id="@+id/id_indicator_two"
@@ -34,9 +35,9 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:padding="5dp"
-            zhy:icon="@drawable/ic_menu_friendslist"
-            zhy:text="@string/tab_contact"
-            zhy:text_size="12sp" />
+            ch:weiicon="@drawable/ic_menu_friendslist"
+            ch:text="@string/tab_contact"
+            ch:text_size="12sp" />
 
         <com.example.kr.myproject.weixinmainpage.ChangeColorIconWithTextView
             android:id="@+id/id_indicator_three"
@@ -44,9 +45,9 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:padding="5dp"
-            zhy:icon="@drawable/ic_menu_emoticons"
-            zhy:text="@string/tab_find"
-            zhy:text_size="12sp" />
+            ch:weiicon="@drawable/ic_menu_emoticons"
+            ch:text="@string/tab_find"
+            ch:text_size="12sp" />
 
         <com.example.kr.myproject.weixinmainpage.ChangeColorIconWithTextView
             android:id="@+id/id_indicator_four"
@@ -54,9 +55,9 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:padding="5dp"
-            zhy:icon="@drawable/ic_menu_allfriends"
-            zhy:text="@string/tab_me"
-            zhy:text_size="12sp" />
+            ch:weiicon="@drawable/ic_menu_allfriends"
+            ch:text="@string/tab_me"
+            ch:text_size="12sp" />
     </LinearLayout>
 
 </LinearLayout>

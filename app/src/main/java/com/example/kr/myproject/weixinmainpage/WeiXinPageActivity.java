@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -18,7 +19,9 @@ import android.view.View.OnClickListener;
 import android.view.ViewConfiguration;
 import android.view.Window;
 
-//@SuppressLint("NewApi")
+import com.example.kr.myproject.R;
+
+@SuppressLint("NewApi")
 public class WeiXinPageActivity extends FragmentActivity implements
         OnPageChangeListener, OnClickListener
 {
@@ -34,6 +37,7 @@ public class WeiXinPageActivity extends FragmentActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        //注意设置mainifest，theme，Theme.Holo.Light.DarkActionBar，以显示actionbar
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wei_xin_page);
 

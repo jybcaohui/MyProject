@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <attr name="item_count" format="integer"></attr>
+    <attr name="item_count" format="integer"/>
+    <attr name="weiicon" format="reference" />
+    <attr name="weicolor" format="color" />
+    <attr name="text" format="string" />
+    <attr name="text_size" format="dimension" />
 
     <declare-styleable name="ViewPagerIndicator">
         <attr name="item_count" />
     </declare-styleable>
 
-    <declare-styleable name="ChangeColorIconView">
-        <attr name="icon" />
-        <attr name="color" />
+    <declare-styleable name="ChangeColorIconWithTextView">
+        <attr name="weiicon" />
+        <attr name="weicolor" />
         <attr name="text" />
         <attr name="text_size" />
     </declare-styleable>

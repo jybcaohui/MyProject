@@ -18,6 +18,8 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 
+import com.example.kr.myproject.R;
+
 
 public class ChangeColorIconWithTextView extends View
 {
@@ -67,7 +69,7 @@ public class ChangeColorIconWithTextView extends View
 
 		// 获取设置的图标
 		TypedArray a = context.obtainStyledAttributes(attrs,
-				R.styleable.ChangeColorIconView);
+				R.styleable.ChangeColorIconWithTextView);
 
 		int n = a.getIndexCount();
 		for (int i = 0; i < n; i++)
@@ -76,17 +78,17 @@ public class ChangeColorIconWithTextView extends View
 			int attr = a.getIndex(i);
 			switch (attr)
 			{
-			case R.styleable.ChangeColorIconView_icon:
+			case R.styleable.ChangeColorIconWithTextView_weiicon:
 				BitmapDrawable drawable = (BitmapDrawable) a.getDrawable(attr);
 				mIconBitmap = drawable.getBitmap();
 				break;
-			case R.styleable.ChangeColorIconView_color:
+			case R.styleable.ChangeColorIconWithTextView_weicolor:
 				mColor = a.getColor(attr, 0x45C01A);
 				break;
-			case R.styleable.ChangeColorIconView_text:
+			case R.styleable.ChangeColorIconWithTextView_text:
 				mText = a.getString(attr);
 				break;
-			case R.styleable.ChangeColorIconView_text_size:
+			case R.styleable.ChangeColorIconWithTextView_text_size:
 				mTextSize = (int) a.getDimension(attr, TypedValue
 						.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10,
 								getResources().getDisplayMetrics()));

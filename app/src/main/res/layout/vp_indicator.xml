@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ffffff"
-    tools:context=".MainActivity">
+    tools:context=".fragmentswithtab.ActivityWithFragments">
 
     <com.example.kr.myproject.fragmentswithtab.ViewPagerIndicator
         android:id="@+id/id_indicator"

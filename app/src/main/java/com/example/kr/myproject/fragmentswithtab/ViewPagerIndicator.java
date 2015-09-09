@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
 import com.example.kr.myproject.R;
 
 import java.util.List;
