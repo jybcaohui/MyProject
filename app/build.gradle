@@ -26,4 +26,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.android.support:support-v4:22.2.0'
     compile files('libs/nineoldandroids-2.4.0.jar')
+    compile 'com.android.support:recyclerview-v7:21.+'
+    compile project(':Pulltorefresh')
 }

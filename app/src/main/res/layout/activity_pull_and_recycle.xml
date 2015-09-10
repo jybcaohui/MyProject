@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context="com.example.kr.myproject.pulltorefereshandrecycleview.PullAndRecycleActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="下拉刷新"
+        android:textSize="20dp"
+        android:background="#cccccc"
+        android:textColor="#995500"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:background="#ffffff"
+        android:layout_below="@+id/title"
+        android:layout_marginBottom="50dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </android.support.v4.view.ViewPager>
+    <LinearLayout
+        android:id="@+id/tab_box"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/tab1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:id="@+id/indicator_square"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/tab_discover_selector" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="下拉刷新"
+                android:layout_below="@+id/indicator_square"
+                android:textColor="@color/tab_text_selector"
+                android:textSize="12sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/tab2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:id="@+id/indicator_square2"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/tab_discover_selector" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="双列显示"
+                android:layout_below="@+id/indicator_square2"
+                android:textColor="@color/tab_text_selector"
+                android:textSize="12sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/tab3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:id="@+id/indicator_square3"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/img3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/tab_discover_selector" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="瀑布流"
+                android:layout_below="@+id/indicator_square3"
+                android:textColor="@color/tab_text_selector"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

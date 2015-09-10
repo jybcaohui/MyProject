@@ -10,6 +10,7 @@ import android.view.Window;
 import android.widget.Button;
 
 import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
+import com.example.kr.myproject.pulltorefereshandrecycleview.PullAndRecycleActivity;
 import com.example.kr.myproject.qqtwowayslidingmenu.QQMenuActivity;
 import com.example.kr.myproject.slidingmenu.SlidingMenuActivity;
 import com.example.kr.myproject.weixinmainpage.WeiXinPageActivity;
@@ -29,6 +30,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but3;
     @InjectView(R.id.but4)
     Button but4;
+    @InjectView(R.id.but5)
+    Button but5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but2.setOnClickListener(this);
         but3.setOnClickListener(this);
         but4.setOnClickListener(this);
+        but5.setOnClickListener(this);
     }
 
     @Override
@@ -98,12 +102,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but3:
                 Intent intent3=new Intent(MainActivity.this, QQMenuActivity.class);
                 startActivity(intent3);
-                toast("跳转到fragments页面！");
                 break;
             case R.id.but4:
                 Intent intent4=new Intent(MainActivity.this, WeiXinPageActivity.class);
                 startActivity(intent4);
-                toast("跳转到fragments页面！");
+                break;
+            case R.id.but5:
+                Intent intent5=new Intent(MainActivity.this, PullAndRecycleActivity.class);
+                startActivity(intent5);
                 break;
         }
 
