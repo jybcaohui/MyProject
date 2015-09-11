@@ -63,6 +63,8 @@ public class VideoViewActivity extends BaseActivity implements View.OnClickListe
 //        params.width =width;
 //        player.setLayoutParams(params);
         RelativeLayout.LayoutParams lp=new  RelativeLayout.LayoutParams(width,height);
+        lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+        lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
         player.setLayoutParams(lp);
         player.setVideoURI(Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/123.3gp"));
@@ -120,6 +122,8 @@ public class VideoViewActivity extends BaseActivity implements View.OnClickListe
                     fullscreen = true;//改变全屏/窗口的标记
                 }else{//设置RelativeLayout的窗口模式
                     RelativeLayout.LayoutParams lp=new  RelativeLayout.LayoutParams(width,height);
+                    lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+                    lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                     lp.addRule(RelativeLayout.CENTER_IN_PARENT);
                     player.setLayoutParams(lp);
                     top.setVisibility(View.VISIBLE);

@@ -1,26 +1,37 @@
 package com.example.kr.myproject.myvideoplayer;
 
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kr.myproject.BaseActivity;
 import com.example.kr.myproject.R;
+import com.example.kr.myproject.util.ScreenUtils;
 
 import java.io.File;
+import java.lang.ref.WeakReference;
 import java.sql.Time;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SurfaceViewActivity extends BaseActivity {
+
+
 
     private final String TAG = "main";
     private SurfaceView sv;
@@ -30,6 +41,20 @@ public class SurfaceViewActivity extends BaseActivity {
     private TextView txt;
     private int currentPosition = 0;
     private boolean isPlaying;
+
+
+    //弹幕
+    private MyHandler handler;
+
+    //弹幕内容
+    private TanmuBean tanmuBean;
+    //放置弹幕内容的父组件
+    private RelativeLayout containerVG;
+
+    //父组件的高度
+    private int validHeightSpace;
+    private int i=0;
+    private Boolean running=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +64,7 @@ public class SurfaceViewActivity extends BaseActivity {
         sv = (SurfaceView) findViewById(R.id.sv);
 
         txt = (TextView) findViewById(R.id.txt);
+        containerVG = (RelativeLayout) findViewById(R.id.danmu);
 
         btn_play = (Button) findViewById(R.id.btn_play);
         btn_pause = (Button) findViewById(R.id.btn_pause);
@@ -61,7 +87,17 @@ public class SurfaceViewActivity extends BaseActivity {
 
         // 为进度条添加进度更改事件
         seekBar.setOnSeekBarChangeListener(change);
+
+
+        //弹幕
+        tanmuBean = new TanmuBean();
+        tanmuBean.setItems(new String[]{"测试一下", "弹幕这东西真不好做啊", "总是出现各种问题~~", "也不知道都是为什么？麻烦！", "哪位大神可以帮帮我啊？", "I need your help.",
+                "测试一下", "弹幕这东西真不好做啊", "总是出现各种问题~~", "也不知道都是为什么？麻烦！", "哪位大神可以帮帮我啊？", "I need your help.",
+                "测试一下", "弹幕这东西真不好做啊", "总是出现各种问题~~", "也不知道都是为什么？麻烦！", "哪位大神可以帮帮我啊？", "I need your help."});
+
+        handler = new MyHandler(this);
     }
+
     private SurfaceHolder.Callback callback = new SurfaceHolder.Callback() {
         // SurfaceHolder被修改的时候回调
         @Override
@@ -136,8 +172,22 @@ public class SurfaceViewActivity extends BaseActivity {
                     stop();
                     break;
                 case R.id.btn_dan:
-//                    Intent intent=new Intent(MainActivity.this,SecondActivity.class);
-//                    startActivity(intent);
+                    if (i == 0 ) {
+                        if(!running){
+                            existMarginValues.clear();
+                            new Thread(new CreateTanmuThread()).start();
+                            running=true;
+                            containerVG.setVisibility(View.VISIBLE);
+                        }else{
+                            containerVG.setVisibility(View.VISIBLE);
+                        }
+                        i = 1;
+                        btn_dan.setText("取消");
+                    } else {
+                        btn_dan.setText("弹幕");
+                        containerVG.setVisibility(View.GONE);
+                        i=0;
+                    }
                     break;
                 default:
                     break;
@@ -168,7 +218,7 @@ public class SurfaceViewActivity extends BaseActivity {
      */
     protected void play(final int msec) {
         // 获取视频文件地址
-        String path ="/storage/emulated/0/123.3gp";
+        String path = "/storage/emulated/0/123.3gp";
         File file = new File(path);
         if (!file.exists()) {
             Toast.makeText(this, "视频文件路径错误", Toast.LENGTH_SHORT).show();
@@ -279,5 +329,137 @@ public class SurfaceViewActivity extends BaseActivity {
 
     }
 
+
+    //每2s自动添加一条弹幕
+    private class CreateTanmuThread implements Runnable {
+        @Override
+        public void run() {
+            int N = tanmuBean.getItems().length;
+            for (int i = 0; i < N; i++) {
+                handler.obtainMessage(1, i, 0).sendToTarget();
+                SystemClock.sleep(2000);
+            }
+        }
+    }
+
+    //需要在主线城中添加组件
+    private static class MyHandler extends Handler {
+        private WeakReference<SurfaceViewActivity> ref;
+
+        MyHandler(SurfaceViewActivity ac) {
+            ref = new WeakReference<>(ac);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+
+            if (msg.what == 1) {
+                SurfaceViewActivity ac = ref.get();
+                if (ac != null && ac.tanmuBean != null) {
+                    int index = msg.arg1;
+                    //设置弹幕内容、文字大小和颜色
+                    String content = ac.tanmuBean.getItems()[index];
+                    float textSize = (float) (ac.tanmuBean.getMinTextSize() * (1 + Math.random() * ac.tanmuBean.getRange()));
+                    int a=(int)(Math.random()*5);//产生0-5的随机数
+                    int textColor;
+                    //产生随机字体颜色
+                    switch (a){
+                        case 0:
+                            textColor=Color.RED;
+                            break;
+                        case 1:
+                            textColor=Color.BLUE;
+                            break;
+                        case 2:
+                            textColor=Color.GREEN;
+                            break;
+                        case 3:
+                            textColor=Color.GRAY;
+                            break;
+                        default:
+                            textColor=Color.YELLOW;
+
+                    }
+                    ac.showTanmu(content, textSize, textColor);
+                }
+            }
+        }
+    }
+
+    private void showTanmu(String content, float textSize, int textColor) {
+        final TextView textView = new TextView(this);
+
+        textView.setTextSize(textSize);
+        textView.setText(content);
+//        textView.setSingleLine();
+        textView.setTextColor(textColor);
+
+        int leftMargin = containerVG.getRight() - containerVG.getLeft() - containerVG.getPaddingLeft();
+        //计算本条弹幕的topMargin(随机值，但是与屏幕中已有的不重复)
+        int verticalMargin = getRandomTopMargin();
+        textView.setTag(verticalMargin);
+
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        params.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+        params.topMargin = verticalMargin;
+
+        textView.setLayoutParams(params);
+        Animation anim = AnimationHelper.createTranslateAnim(this, leftMargin, -ScreenUtils.getScreenWidth(this));
+        anim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                //移除该组件
+                containerVG.removeView(textView);
+                //移除占位
+                int verticalMargin = (int) textView.getTag();
+                existMarginValues.remove(verticalMargin);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        textView.startAnimation(anim);
+
+        containerVG.addView(textView);
+    }
+
+    //记录当前仍在显示状态的弹幕的位置（避免重复）
+    private Set<Integer> existMarginValues = new HashSet<>();
+    private int linesCount;
+
+    private int getRandomTopMargin() {
+        //计算用于弹幕显示的空间高度
+        if (validHeightSpace == 0) {
+            validHeightSpace = containerVG.getBottom() - containerVG.getTop()
+                    - containerVG.getPaddingTop() - containerVG.getPaddingBottom();
+        }
+
+        //计算可用的行数
+        if (linesCount == 0) {
+            linesCount = validHeightSpace / ScreenUtils.dp2px(SurfaceViewActivity.this, tanmuBean.getMinTextSize() * (1 + tanmuBean.getRange()));
+            if (linesCount == 0) {
+                throw new RuntimeException("Not enough space to show text.");
+            }
+        }
+
+        //检查重叠
+        while (true) {
+            int randomIndex = (int) (Math.random() * linesCount);
+            int marginValue = randomIndex * (validHeightSpace / linesCount);
+
+            if (!existMarginValues.contains(marginValue)) {
+                existMarginValues.add(marginValue);
+                return marginValue;
+            }
+        }
+    }
 
 }

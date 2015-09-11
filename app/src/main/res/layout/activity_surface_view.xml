@@ -4,23 +4,36 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.kr.myproject.myvideoplayer.SurfaceViewActivity">
-    <SurfaceView
-        android:id="@+id/sv"
-        android:layout_width="fill_parent"
-        android:layout_height="450dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <SurfaceView
+            android:id="@+id/sv"
+            android:layout_width="fill_parent"
+            android:layout_height="450dp" />
+        <RelativeLayout
+            android:id="@+id/danmu"
+            android:layout_width="fill_parent"
+            android:layout_height="450dp"/>
+    </RelativeLayout>
+
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="时间显示。。。"/>
+        android:text="时间显示。。。" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_play"
@@ -49,6 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="停止" />
+
         <Button
             android:id="@+id/btn_dan"
             android:layout_width="0dip"
