@@ -10,6 +10,7 @@ import android.view.Window;
 import android.widget.Button;
 
 import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
+import com.example.kr.myproject.myvideoplayer.VideoViewActivity;
 import com.example.kr.myproject.pulltorefereshandrecycleview.PullAndRecycleActivity;
 import com.example.kr.myproject.qqtwowayslidingmenu.QQMenuActivity;
 import com.example.kr.myproject.slidingmenu.SlidingMenuActivity;
@@ -32,6 +33,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but4;
     @InjectView(R.id.but5)
     Button but5;
+    @InjectView(R.id.but6)
+    Button but6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but3.setOnClickListener(this);
         but4.setOnClickListener(this);
         but5.setOnClickListener(this);
+        but6.setOnClickListener(this);
     }
 
     @Override
@@ -110,6 +114,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but5:
                 Intent intent5=new Intent(MainActivity.this, PullAndRecycleActivity.class);
                 startActivity(intent5);
+                break;
+            case R.id.but6:
+                Intent intent6=new Intent(MainActivity.this, VideoViewActivity.class);
+                startActivity(intent6);
                 break;
         }
 

@@ -19,5 +19,7 @@
     <string name="tab_find">发现</string>
     <string name="tab_me">我</string>
     <string name="title_activity_pull_and_recycle">PullAndRecycleActivity</string>
+    <string name="title_activity_video_player">VideoPlayerActivity</string>
+    <string name="title_activity_surface_view">SurfaceViewActivity</string>
 
 </resources>

@@ -36,5 +36,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="下拉刷新单双栏瀑布流" />
+    <Button
+        android:id="@+id/but6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="视频播放器" />
 
 </LinearLayout>

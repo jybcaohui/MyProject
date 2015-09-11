@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kr.myproject" >
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -30,6 +33,14 @@
         <activity
             android:name=".pulltorefereshandrecycleview.PullAndRecycleActivity"
             android:label="@string/title_activity_pull_and_recycle" >
+        </activity>
+        <activity
+            android:name=".myvideoplayer.VideoViewActivity"
+            android:label="@string/title_activity_video_player" >
+        </activity>
+        <activity
+            android:name=".myvideoplayer.SurfaceViewActivity"
+            android:label="@string/title_activity_surface_view" >
         </activity>
     </application>
 
