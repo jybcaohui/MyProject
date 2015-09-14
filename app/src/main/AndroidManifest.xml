@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -41,6 +42,11 @@
         <activity
             android:name=".myvideoplayer.SurfaceViewActivity"
             android:label="@string/title_activity_surface_view" >
+        </activity>
+        <activity
+            android:name=".myvideoplayer.FullPlayActivity"
+            android:screenOrientation="landscape"
+            android:label="@string/title_activity_full_play" >
         </activity>
     </application>
 

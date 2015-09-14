@@ -21,5 +21,6 @@
     <string name="title_activity_pull_and_recycle">PullAndRecycleActivity</string>
     <string name="title_activity_video_player">VideoPlayerActivity</string>
     <string name="title_activity_surface_view">SurfaceViewActivity</string>
+    <string name="title_activity_full_play">FullPlayActivity</string>
 
 </resources>

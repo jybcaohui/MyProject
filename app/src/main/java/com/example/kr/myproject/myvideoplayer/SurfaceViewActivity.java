@@ -1,5 +1,6 @@
 package com.example.kr.myproject.myvideoplayer;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -39,6 +41,9 @@ public class SurfaceViewActivity extends BaseActivity {
     private MediaPlayer mediaPlayer;
     private SeekBar seekBar;
     private TextView txt;
+
+    private ImageView full;
+    private ImageView pause;
     private int currentPosition = 0;
     private boolean isPlaying;
 
@@ -55,6 +60,11 @@ public class SurfaceViewActivity extends BaseActivity {
     private int validHeightSpace;
     private int i=0;
     private Boolean running=false;
+
+    //网络视频文件路径
+    String videoUrl = "http://m.qicheng.tv/upload//upload_files/f/0/f2ec6a76b8718cb7cc076598ac568930_480p.mp4";
+    // 获取视频文件地址（本地视频文件）
+    String path = "/storage/emulated/0/123.3gp";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,12 +81,16 @@ public class SurfaceViewActivity extends BaseActivity {
         btn_replay = (Button) findViewById(R.id.btn_replay);
         btn_stop = (Button) findViewById(R.id.btn_stop);
         btn_dan = (Button) findViewById(R.id.btn_dan);
+        full=(ImageView)findViewById(R.id.fullscreen);
+        pause=(ImageView)findViewById(R.id.pause_btn);
 
         btn_play.setOnClickListener(click);
         btn_pause.setOnClickListener(click);
         btn_replay.setOnClickListener(click);
         btn_stop.setOnClickListener(click);
         btn_dan.setOnClickListener(click);
+        full.setOnClickListener(click);
+        pause.setOnClickListener(click);
 
         // 为SurfaceHolder添加回调
         sv.getHolder().addCallback(callback);
@@ -135,6 +149,10 @@ public class SurfaceViewActivity extends BaseActivity {
             // 当进度条停止修改的时候触发
             // 取得当前进度条的刻度
             int progress = seekBar.getProgress();
+            Log.d("---",mediaPlayer.getCurrentPosition()+"");
+            Log.d("---",mediaPlayer.getDuration()+"");
+            Log.d("---",seekBar.getProgress()+"");
+            Log.d("---",seekBar.getMax()+"");
             if (mediaPlayer != null && mediaPlayer.isPlaying()) {
                 // 设置当前播放的位置
                 mediaPlayer.seekTo(progress);
@@ -189,6 +207,13 @@ public class SurfaceViewActivity extends BaseActivity {
                         i=0;
                     }
                     break;
+                case R.id.fullscreen:
+                    Intent intent = new Intent(SurfaceViewActivity.this, FullPlayActivity.class);
+                    intent.putExtra("currentpos", mediaPlayer.getCurrentPosition());
+                    intent.putExtra("max", mediaPlayer.getDuration());
+                    intent.putExtra("uri", videoUrl);
+                    startActivity(intent);
+                    break;
                 default:
                     break;
             }
@@ -217,8 +242,7 @@ public class SurfaceViewActivity extends BaseActivity {
      * @param msec 播放初始位置
      */
     protected void play(final int msec) {
-        // 获取视频文件地址
-        String path = "/storage/emulated/0/123.3gp";
+
         File file = new File(path);
         if (!file.exists()) {
             Toast.makeText(this, "视频文件路径错误", Toast.LENGTH_SHORT).show();
@@ -229,7 +253,10 @@ public class SurfaceViewActivity extends BaseActivity {
             mediaPlayer = new MediaPlayer();
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             // 设置播放的视频源
+            //本地文件
             mediaPlayer.setDataSource(file.getAbsolutePath());
+            //网络文件
+//            mediaPlayer.setDataSource(videoUrl);
             // 设置显示视频的SurfaceHolder
             mediaPlayer.setDisplay(sv.getHolder());
             Log.i(TAG, "开始装载");
@@ -328,7 +355,6 @@ public class SurfaceViewActivity extends BaseActivity {
         }
 
     }
-
 
     //每2s自动添加一条弹幕
     private class CreateTanmuThread implements Runnable {

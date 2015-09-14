@@ -24,7 +24,7 @@ import com.example.kr.myproject.util.ScreenUtils;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class VideoViewActivity extends BaseActivity implements View.OnClickListener{
+public class VideoViewActivity extends BaseActivity implements View.OnClickListener {
 
     @InjectView(R.id.back)
     TextView back;
@@ -49,6 +49,7 @@ public class VideoViewActivity extends BaseActivity implements View.OnClickListe
     private Boolean running = false;
     int width;
     int height;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,17 +58,15 @@ public class VideoViewActivity extends BaseActivity implements View.OnClickListe
         ButterKnife.inject(this);
 
         width = ScreenUtils.getScreenWidth(this);
-        height = width*3/4;
-//        ViewGroup.LayoutParams params = player.getLayoutParams();
-//        params.height=height;
-//        params.width =width;
-//        player.setLayoutParams(params);
-        RelativeLayout.LayoutParams lp=new  RelativeLayout.LayoutParams(width,height);
+        height = width * 3 / 4;
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(width, height);
         lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
         lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
         player.setLayoutParams(lp);
         player.setVideoURI(Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/123.3gp"));
+        //videoView播放网络视频，唯一需要改变的只有URI（莫忘网络权限）
+//        player.setVideoURI(Uri.parse("http://m.qicheng.tv/upload//upload_files/f/0/f2ec6a76b8718cb7cc076598ac568930_480p.mp4"));
         player.setMediaController(new MediaController(this));
         start.setOnClickListener(this);
         pause.setOnClickListener(this);
@@ -76,41 +75,39 @@ public class VideoViewActivity extends BaseActivity implements View.OnClickListe
     }
 
 
-
-
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.start:
-                if(!running && player.getResources()==null){
+                if (!running && player.getResources() == null) {
                     Log.d("file", Environment.getExternalStorageDirectory().getPath() + "/123.3gp");
                     player.setVideoURI(Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/123.3gp"));
                     player.start();
-                }else{
+                } else {
                     player.start();
                 }
-                running=true;
+                running = true;
                 start.setClickable(false);
                 start.setTextColor(getResources().getColor(R.color.gray_text));
                 break;
             case R.id.pause:
-                if(running){
+                if (running) {
                     player.pause();
-                    running=false;
+                    running = false;
                     pause.setText("继续");
-                }else{
+                } else {
                     player.start();
                     pause.setText("暂停");
-                    running=true;
+                    running = true;
                 }
                 break;
             case R.id.jump:
-                Intent intent=new Intent(this,SurfaceViewActivity.class);
+                Intent intent = new Intent(this, SurfaceViewActivity.class);
                 startActivity(intent);
                 break;
             case R.id.full:
-                if(!fullscreen){//设置RelativeLayout的全屏模式
-                    RelativeLayout.LayoutParams layoutParams=
+                if (!fullscreen) {//设置RelativeLayout的全屏模式
+                    RelativeLayout.LayoutParams layoutParams =
                             new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.FILL_PARENT, RelativeLayout.LayoutParams.FILL_PARENT);
                     layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
                     layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
@@ -120,8 +117,8 @@ public class VideoViewActivity extends BaseActivity implements View.OnClickListe
                     top.setVisibility(View.GONE);
                     menu.setVisibility(View.GONE);
                     fullscreen = true;//改变全屏/窗口的标记
-                }else{//设置RelativeLayout的窗口模式
-                    RelativeLayout.LayoutParams lp=new  RelativeLayout.LayoutParams(width,height);
+                } else {//设置RelativeLayout的窗口模式
+                    RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(width, height);
                     lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
                     lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                     lp.addRule(RelativeLayout.CENTER_IN_PARENT);
