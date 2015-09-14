@@ -41,5 +41,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="视频播放器" />
+    <Button
+        android:id="@+id/but7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="微信头像截取" />
 
 </LinearLayout>

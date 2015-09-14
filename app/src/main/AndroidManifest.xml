@@ -45,8 +45,16 @@
         </activity>
         <activity
             android:name=".myvideoplayer.FullPlayActivity"
-            android:screenOrientation="landscape"
-            android:label="@string/title_activity_full_play" >
+            android:label="@string/title_activity_full_play"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".weixinheadimagecut.CutImageActivity"
+            android:label="@string/title_activity_cut_image" >
+        </activity>
+        <activity
+            android:name=".weixinheadimagecut.ShowImageActivity"
+            android:label="@string/title_activity_show_image" >
         </activity>
     </application>
 

@@ -22,5 +22,7 @@
     <string name="title_activity_video_player">VideoPlayerActivity</string>
     <string name="title_activity_surface_view">SurfaceViewActivity</string>
     <string name="title_activity_full_play">FullPlayActivity</string>
+    <string name="title_activity_cut_image">CutImageActivity</string>
+    <string name="title_activity_show_image">ShowImageActivity</string>
 
 </resources>

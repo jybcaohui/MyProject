@@ -15,6 +15,7 @@ import com.example.kr.myproject.myvideoplayer.VideoViewActivity;
 import com.example.kr.myproject.pulltorefereshandrecycleview.PullAndRecycleActivity;
 import com.example.kr.myproject.qqtwowayslidingmenu.QQMenuActivity;
 import com.example.kr.myproject.slidingmenu.SlidingMenuActivity;
+import com.example.kr.myproject.weixinheadimagecut.CutImageActivity;
 import com.example.kr.myproject.weixinmainpage.WeiXinPageActivity;
 
 
@@ -36,6 +37,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but5;
     @InjectView(R.id.but6)
     Button but6;
+    @InjectView(R.id.but7)
+    Button but7;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +51,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but4.setOnClickListener(this);
         but5.setOnClickListener(this);
         but6.setOnClickListener(this);
+        but7.setOnClickListener(this);
     }
 
     @Override
@@ -119,6 +123,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but6:
                 Intent intent6=new Intent(MainActivity.this, VideoViewActivity.class);
                 startActivity(intent6);
+                break;
+            case R.id.but7:
+                Intent intent7=new Intent(MainActivity.this, CutImageActivity.class);
+                startActivity(intent7);
                 break;
         }
 
