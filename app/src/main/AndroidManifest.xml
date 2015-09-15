@@ -69,6 +69,10 @@
             android:name=".animationtest.XmlForAnimationActivity"
             android:label="@string/title_activity_xml_for_animation" >
         </activity>
+        <activity
+            android:name=".edittextwhitimageandclick.EditTextActivity"
+            android:label="@string/title_activity_edit_text" >
+        </activity>
     </application>
 
 </manifest>

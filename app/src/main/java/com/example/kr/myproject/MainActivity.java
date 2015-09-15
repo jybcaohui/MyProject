@@ -9,8 +9,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.kr.myproject.animationtest.AnimationActivity;
+import com.example.kr.myproject.edittextwhitimageandclick.EditTextActivity;
 import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
 import com.example.kr.myproject.myvideoplayer.VideoViewActivity;
 import com.example.kr.myproject.placechoose.PlaceChooseActivity;
@@ -45,6 +47,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but8;
     @InjectView(R.id.but9)
     Button but9;
+    @InjectView(R.id.but10)
+    Button but10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +64,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but7.setOnClickListener(this);
         but8.setOnClickListener(this);
         but9.setOnClickListener(this);
+        but10.setOnClickListener(this);
     }
 
     @Override
@@ -143,6 +148,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but9:
                 Intent intent9=new Intent(MainActivity.this, AnimationActivity.class);
                 startActivity(intent9);
+                break;
+            case R.id.but10:
+                Intent intent10=new Intent(MainActivity.this, EditTextActivity.class);
+                startActivity(intent10);
                 break;
         }
 
