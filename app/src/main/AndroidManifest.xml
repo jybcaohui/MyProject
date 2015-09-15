@@ -61,6 +61,14 @@
             android:name=".placechoose.PlaceChooseActivity"
             android:label="@string/title_activity_place_choose" >
         </activity>
+        <activity
+            android:name=".animationtest.AnimationActivity"
+            android:label="@string/title_activity_animation" >
+        </activity>
+        <activity
+            android:name=".animationtest.XmlForAnimationActivity"
+            android:label="@string/title_activity_xml_for_animation" >
+        </activity>
     </application>
 
 </manifest>

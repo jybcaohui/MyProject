@@ -8,9 +8,17 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:background="#ccffff"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
         android:gravity="center"
+        android:singleLine="true"
         android:textSize="18sp"
-        android:text="功能列表"/>
+        android:text="功能列表,跑马灯的效果，，，文字应该长一点，不然看不到效果！！"/>
     <Button
         android:id="@+id/but1"
         android:layout_width="fill_parent"
@@ -51,5 +59,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="地址选择器" />
+    <Button
+        android:id="@+id/but9"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="动画" />
 
 </LinearLayout>

@@ -25,5 +25,7 @@
     <string name="title_activity_cut_image">CutImageActivity</string>
     <string name="title_activity_show_image">ShowImageActivity</string>
     <string name="title_activity_place_choose">PlaceChooseActivity</string>
+    <string name="title_activity_animation">AnimationActivity</string>
+    <string name="title_activity_xml_for_animation">XmlForAnimationActivity</string>
 
 </resources>
