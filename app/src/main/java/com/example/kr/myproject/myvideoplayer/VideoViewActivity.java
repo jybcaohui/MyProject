@@ -64,9 +64,9 @@ public class VideoViewActivity extends BaseActivity implements View.OnClickListe
         lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
         player.setLayoutParams(lp);
-        player.setVideoURI(Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/123.3gp"));
+//        player.setVideoURI(Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/123.3gp"));
         //videoView播放网络视频，唯一需要改变的只有URI（莫忘网络权限）
-//        player.setVideoURI(Uri.parse("http://m.qicheng.tv/upload//upload_files/f/0/f2ec6a76b8718cb7cc076598ac568930_480p.mp4"));
+        player.setVideoURI(Uri.parse("http://m.qicheng.tv/upload//upload_files/f/0/f2ec6a76b8718cb7cc076598ac568930_480p.mp4"));
         player.setMediaController(new MediaController(this));
         start.setOnClickListener(this);
         pause.setOnClickListener(this);

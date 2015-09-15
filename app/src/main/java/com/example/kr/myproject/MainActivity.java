@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
 import com.example.kr.myproject.myvideoplayer.VideoViewActivity;
+import com.example.kr.myproject.placechoose.PlaceChooseActivity;
 import com.example.kr.myproject.pulltorefereshandrecycleview.PullAndRecycleActivity;
 import com.example.kr.myproject.qqtwowayslidingmenu.QQMenuActivity;
 import com.example.kr.myproject.slidingmenu.SlidingMenuActivity;
@@ -39,6 +40,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but6;
     @InjectView(R.id.but7)
     Button but7;
+    @InjectView(R.id.but8)
+    Button but8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but5.setOnClickListener(this);
         but6.setOnClickListener(this);
         but7.setOnClickListener(this);
+        but8.setOnClickListener(this);
     }
 
     @Override
@@ -127,6 +131,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but7:
                 Intent intent7=new Intent(MainActivity.this, CutImageActivity.class);
                 startActivity(intent7);
+                break;
+            case R.id.but8:
+                Intent intent8=new Intent(MainActivity.this, PlaceChooseActivity.class);
+                startActivity(intent8);
                 break;
         }
 

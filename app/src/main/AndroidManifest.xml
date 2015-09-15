@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -55,6 +56,10 @@
         <activity
             android:name=".weixinheadimagecut.ShowImageActivity"
             android:label="@string/title_activity_show_image" >
+        </activity>
+        <activity
+            android:name=".placechoose.PlaceChooseActivity"
+            android:label="@string/title_activity_place_choose" >
         </activity>
     </application>
 

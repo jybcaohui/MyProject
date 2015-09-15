@@ -46,5 +46,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="微信头像截取" />
+    <Button
+        android:id="@+id/but8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="地址选择器" />
 
 </LinearLayout>

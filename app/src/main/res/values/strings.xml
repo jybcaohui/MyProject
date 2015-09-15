@@ -24,5 +24,6 @@
     <string name="title_activity_full_play">FullPlayActivity</string>
     <string name="title_activity_cut_image">CutImageActivity</string>
     <string name="title_activity_show_image">ShowImageActivity</string>
+    <string name="title_activity_place_choose">PlaceChooseActivity</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package com.example.kr.myproject.myvideoplayer;
 
+import android.app.Service;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.AudioManager;
@@ -7,12 +8,14 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.PowerManager;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -31,7 +34,7 @@ import java.sql.Time;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SurfaceViewActivity extends BaseActivity {
+public class SurfaceViewActivity extends BaseActivity implements MediaPlayer.OnBufferingUpdateListener {
 
 
 
@@ -45,6 +48,7 @@ public class SurfaceViewActivity extends BaseActivity {
     private ImageView full;
     private ImageView pause;
     private int currentPosition = 0;
+    private int videoDuration;
     private boolean isPlaying;
 
 
@@ -65,11 +69,19 @@ public class SurfaceViewActivity extends BaseActivity {
     String videoUrl = "http://m.qicheng.tv/upload//upload_files/f/0/f2ec6a76b8718cb7cc076598ac568930_480p.mp4";
     // 获取视频文件地址（本地视频文件）
     String path = "/storage/emulated/0/123.3gp";
+
+    //设置屏幕常亮，请求常亮，onResume()设置wakeLock.acquire()，取消屏幕常亮，onPause()取消wakeLock.release();
+    private PowerManager powerManager = null;
+    private PowerManager.WakeLock wakeLock = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_surface_view);
+        powerManager = (PowerManager) this.getSystemService(Service.POWER_SERVICE);
+        wakeLock = this.powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "My Lock");
+        //是否需计算锁的数量
+        wakeLock.setReferenceCounted(false);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         sv = (SurfaceView) findViewById(R.id.sv);
 
@@ -149,8 +161,8 @@ public class SurfaceViewActivity extends BaseActivity {
             // 当进度条停止修改的时候触发
             // 取得当前进度条的刻度
             int progress = seekBar.getProgress();
-            Log.d("---",mediaPlayer.getCurrentPosition()+"");
-            Log.d("---",mediaPlayer.getDuration()+"");
+            Log.d("---",mediaPlayer.getCurrentPosition()+"");//当前进度
+            Log.d("---",mediaPlayer.getDuration()+"");//总长度
             Log.d("---",seekBar.getProgress()+"");
             Log.d("---",seekBar.getMax()+"");
             if (mediaPlayer != null && mediaPlayer.isPlaying()) {
@@ -243,20 +255,26 @@ public class SurfaceViewActivity extends BaseActivity {
      */
     protected void play(final int msec) {
 
-        File file = new File(path);
-        if (!file.exists()) {
-            Toast.makeText(this, "视频文件路径错误", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
+//        File file = new File(path);
+//        if (!file.exists()) {
+//            Toast.makeText(this, "视频文件路径错误", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
         try {
-            mediaPlayer = new MediaPlayer();
+
+            if (mediaPlayer == null) {
+                mediaPlayer = new MediaPlayer();
+            }else {
+                mediaPlayer.release();
+                mediaPlayer=new MediaPlayer();
+            }
+            mediaPlayer.setOnBufferingUpdateListener(this);//设置缓冲进度条的监听
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             // 设置播放的视频源
             //本地文件
-            mediaPlayer.setDataSource(file.getAbsolutePath());
+//            mediaPlayer.setDataSource(file.getAbsolutePath());
             //网络文件
-//            mediaPlayer.setDataSource(videoUrl);
+            mediaPlayer.setDataSource(videoUrl);
             // 设置显示视频的SurfaceHolder
             mediaPlayer.setDisplay(sv.getHolder());
             Log.i(TAG, "开始装载");
@@ -269,30 +287,9 @@ public class SurfaceViewActivity extends BaseActivity {
                     mediaPlayer.start();
                     // 按照初始位置播放
                     mediaPlayer.seekTo(msec);
+                    videoDuration = mediaPlayer.getDuration();
                     // 设置进度条的最大进度为视频流的最大播放时长
-                    seekBar.setMax(mediaPlayer.getDuration());
-
-                    new Thread() {
-
-                        @Override
-                        public void run() {
-                            try {
-                                isPlaying = true;
-                                while (isPlaying) {
-                                    int current = mediaPlayer
-                                            .getCurrentPosition();
-                                    seekBar.setProgress(current);
-//                                    Time progress = new Time(mediaPlayer.getCurrentPosition());
-//                                    Time remaining = new Time(mediaPlayer.getDuration()-mediaPlayer.getCurrentPosition());
-//                                    txt.setText(progress.toString() + "/" + remaining.toString());
-                                    sleep(500);
-                                }
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }.start();
-
+                    seekBar.setMax(videoDuration);
                     btn_play.setEnabled(false);
                 }
             });
@@ -319,6 +316,15 @@ public class SurfaceViewActivity extends BaseActivity {
             e.printStackTrace();
         }
 
+    }
+    @Override
+    public void onBufferingUpdate(MediaPlayer mp, int percent) {
+        //缓冲进度
+        seekBar.setSecondaryProgress(videoDuration * percent / 100);
+        //播放进度
+        int current = mediaPlayer
+                .getCurrentPosition();
+        seekBar.setProgress(current);
     }
 
     /**
@@ -355,6 +361,8 @@ public class SurfaceViewActivity extends BaseActivity {
         }
 
     }
+
+
 
     //每2s自动添加一条弹幕
     private class CreateTanmuThread implements Runnable {
@@ -488,4 +496,15 @@ public class SurfaceViewActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        wakeLock.acquire();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        wakeLock.release();
+    }
 }
