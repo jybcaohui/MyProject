@@ -77,6 +77,10 @@
             android:name=".gesturedetector.GestureDetectorActivity"
             android:label="@string/title_activity_gesture_detector" >
         </activity>
+        <activity
+            android:name=".gesturedetector.GestureWithListViewActivity"
+            android:label="@string/title_activity_gesture_with_list_view" >
+        </activity>
     </application>
 
 </manifest>

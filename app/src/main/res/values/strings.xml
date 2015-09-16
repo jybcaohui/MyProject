@@ -7,7 +7,6 @@
     <string name="title_activity_qqmenu">QQMenuActivity</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_wei_xin_page">WeiXinPageActivity</string>
-
     <string name="action_feed">意见反馈</string>
     <string name="action_group_chat">发起群聊</string>
     <string name="action_add_friend">添加朋友</string>
@@ -29,5 +28,6 @@
     <string name="title_activity_xml_for_animation">XmlForAnimationActivity</string>
     <string name="title_activity_edit_text">EditTextActivity</string>
     <string name="title_activity_gesture_detector">GestureDetectorActivity</string>
+    <string name="title_activity_gesture_with_list_view">GestureWithListViewActivity</string>
 
 </resources>

@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kr.myproject.gesturedetector.GestureWithListViewActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#992222"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:text="处理滑动手势和ListView滑动冲突（onTouchEvent）" />
+
+    <ViewFlipper
+        android:id="@+id/vf_flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@+id/list1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <ListView
+            android:id="@+id/list2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </ViewFlipper>
+</LinearLayout>
