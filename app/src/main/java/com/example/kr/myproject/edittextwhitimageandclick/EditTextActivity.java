@@ -24,6 +24,7 @@ import butterknife.InjectView;
 
 public class EditTextActivity extends BaseActivity {
 
+    //http://2711082222.blog.163.com/blog/static/106302249201232633333181/
     @InjectView(R.id.edt)
     EditText edt;
     @InjectView(R.id.edt2)

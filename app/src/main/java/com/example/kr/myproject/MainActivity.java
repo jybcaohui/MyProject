@@ -14,6 +14,7 @@ import android.widget.EditText;
 import com.example.kr.myproject.animationtest.AnimationActivity;
 import com.example.kr.myproject.edittextwhitimageandclick.EditTextActivity;
 import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
+import com.example.kr.myproject.gesturedetector.GestureDetectorActivity;
 import com.example.kr.myproject.myvideoplayer.VideoViewActivity;
 import com.example.kr.myproject.placechoose.PlaceChooseActivity;
 import com.example.kr.myproject.pulltorefereshandrecycleview.PullAndRecycleActivity;
@@ -49,6 +50,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but9;
     @InjectView(R.id.but10)
     Button but10;
+    @InjectView(R.id.but11)
+    Button but11;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +68,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but8.setOnClickListener(this);
         but9.setOnClickListener(this);
         but10.setOnClickListener(this);
+        but11.setOnClickListener(this);
     }
 
     @Override
@@ -152,6 +156,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but10:
                 Intent intent10=new Intent(MainActivity.this, EditTextActivity.class);
                 startActivity(intent10);
+                break;
+            case R.id.but11:
+                Intent intent11=new Intent(MainActivity.this, GestureDetectorActivity.class);
+                startActivity(intent11);
                 break;
         }
 

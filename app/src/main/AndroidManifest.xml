@@ -73,6 +73,10 @@
             android:name=".edittextwhitimageandclick.EditTextActivity"
             android:label="@string/title_activity_edit_text" >
         </activity>
+        <activity
+            android:name=".gesturedetector.GestureDetectorActivity"
+            android:label="@string/title_activity_gesture_detector" >
+        </activity>
     </application>
 
 </manifest>
