@@ -81,6 +81,7 @@
             android:name=".gesturedetector.GestureWithListViewActivity"
             android:label="@string/title_activity_gesture_with_list_view" >
         </activity>
+        <activity android:name=".dicegame.DiceGameActivity"/>
     </application>
 
 </manifest>
