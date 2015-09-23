@@ -1,55 +1,58 @@
 package com.example.kr.myproject.gesturedetector;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.ViewFlipper;
 
 import com.example.kr.myproject.BaseActivity;
 import com.example.kr.myproject.R;
 
-public class GestureDetectorActivity extends BaseActivity implements View.OnTouchListener, GestureDetector.OnGestureListener {
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
+public class GestureWithListViewActivity extends BaseActivity implements View.OnTouchListener, GestureDetector.OnGestureListener{
+
+    @InjectView(R.id.list1)
+    ListView list1;
+    @InjectView(R.id.list2)
+    ListView list2;
+    List<String> list;
     ViewFlipper flipper; //一次显示一个子view
     GestureDetector detector; //手势监测器
-    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_gesture_with_list_view);
+        ButterKnife.inject(this);
         detector = new GestureDetector(this);
-        setContentView(R.layout.activity_gesture_detector);
         flipper = (ViewFlipper) findViewById(R.id.vf_flipper);
         flipper.setOnTouchListener(this);
-        button=(Button)findViewById(R.id.but);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(GestureDetectorActivity.this,GestureWithListViewActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        list=new ArrayList<String>();
+        int i=0;
+        while (i<10){
+            String item="item";
+            list.add(item+i);
+            i++;
+        }
+        list1.setAdapter(new ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,list));
+        list2.setAdapter(new ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,list));
     }
-    //整体屏幕的滑动事件
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//        return this.detector.onTouchEvent(event);//由检测器 执行 activity.<span style="font-family: Arial, Helvetica, sans-serif;">onTouchEvent</span>
-//
-//    }
-
     /*以下为 OnGestureListener 的方法*/
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
                            float velocityY) {
-        Log.d("onTouch","onFling事件触发");
+        Log.d("onTouch", "onFling事件触发");
         if (e1.getX() - e2.getX() > 120) {//向左滑，右边显示
             //this.flipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.push_left_in));
             //this.flipper.setOutAnimation(AnimationUtils.loadAnimation(this, R.anim.push_left_out));
@@ -92,4 +95,6 @@ public class GestureDetectorActivity extends BaseActivity implements View.OnTouc
         Log.d("onTouch","touch事件触发");
         return this.detector.onTouchEvent(event);
     }
+
 }
+
