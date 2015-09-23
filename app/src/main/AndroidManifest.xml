@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:allowBackup="true"
@@ -76,6 +77,10 @@
         <activity
             android:name=".gesturedetector.GestureDetectorActivity"
             android:label="@string/title_activity_gesture_detector" >
+        </activity>
+        <activity
+            android:name=".dicegame.DiceGameActivity"
+            android:label="@string/title_activity_dice_game" >
         </activity>
     </application>
 

@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.kr.myproject.animationtest.AnimationActivity;
+import com.example.kr.myproject.dicegame.DiceGameActivity;
 import com.example.kr.myproject.edittextwhitimageandclick.EditTextActivity;
 import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
 import com.example.kr.myproject.gesturedetector.GestureDetectorActivity;
@@ -52,6 +53,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but10;
     @InjectView(R.id.but11)
     Button but11;
+    @InjectView(R.id.but12)
+    Button but12;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +72,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but9.setOnClickListener(this);
         but10.setOnClickListener(this);
         but11.setOnClickListener(this);
+        but12.setOnClickListener(this);
     }
 
     @Override
@@ -160,6 +164,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but11:
                 Intent intent11=new Intent(MainActivity.this, GestureDetectorActivity.class);
                 startActivity(intent11);
+                break;
+            case R.id.but12:
+                Intent intent12=new Intent(MainActivity.this, DiceGameActivity.class);
+                startActivity(intent12);
                 break;
         }
 

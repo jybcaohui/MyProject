@@ -95,6 +95,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="检测滑动手势" />
+            <Button
+                android:id="@+id/but12"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="骰子游戏" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

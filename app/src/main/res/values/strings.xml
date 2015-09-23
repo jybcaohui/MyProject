@@ -29,5 +29,6 @@
     <string name="title_activity_xml_for_animation">XmlForAnimationActivity</string>
     <string name="title_activity_edit_text">EditTextActivity</string>
     <string name="title_activity_gesture_detector">GestureDetectorActivity</string>
+    <string name="title_activity_dice_game">DiceGameActivity</string>
 
 </resources>
