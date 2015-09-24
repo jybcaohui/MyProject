@@ -31,6 +31,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="腾讯微博分享" />
+    <Button
+        android:id="@+id/sinashare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新浪微博分享" />
 
 
 </LinearLayout>

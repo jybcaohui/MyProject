@@ -73,6 +73,8 @@ public class ShareActivity extends BaseActivity implements View.OnClickListener 
     Button zoneShare;
     @InjectView(R.id.qqweiboshare)
     Button qqweiboshare;
+    @InjectView(R.id.sinashare)
+    Button sinashare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +87,7 @@ public class ShareActivity extends BaseActivity implements View.OnClickListener 
         qqshare.setOnClickListener(this);
         zoneShare.setOnClickListener(this);
         qqweiboshare.setOnClickListener(this);
+        sinashare.setOnClickListener(this);
 
         arrayList = new ArrayList<>();
         arrayList.add(s);
@@ -113,11 +116,15 @@ public class ShareActivity extends BaseActivity implements View.OnClickListener 
             case R.id.qqweiboshare:
                 onQQBind(true);
                 break;
+            case R.id.sinashare:
+
+
+                break;
         }
     }
 
     private void shareToWeChat() {
-        String app_id = "wx90aaa93de3644201";
+        String app_id = "wx90aaa93de3644201";//不同电脑运行由于签名不同，appid也就不同
         api = WXAPIFactory.createWXAPI(this, app_id, true);
         api.registerApp(app_id);
 
@@ -174,7 +181,7 @@ public class ShareActivity extends BaseActivity implements View.OnClickListener 
         params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
         params.putString(QQShare.SHARE_TO_QQ_TITLE, "要分享的标题");
         params.putString(QQShare.SHARE_TO_QQ_SUMMARY, "要分享的摘要");
-        params.putString(QQShare.SHARE_TO_QQ_TARGET_URL, "http://www.qq.com/news/1.html");
+        params.putString(QQShare.SHARE_TO_QQ_TARGET_URL, "http://www.qq.com");
         params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL, "http://imgcache.qq.com/qzone/space_item/pre/0/66768.gif");
         params.putString(QQShare.SHARE_TO_QQ_APP_NAME, "测试应用222222");
         mTencent.shareToQQ(ShareActivity.this, params, new BaseUiListener() {
