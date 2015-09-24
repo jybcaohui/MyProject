@@ -100,6 +100,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="骰子游戏" />
+            <Button
+                android:id="@+id/but13"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="第三方登录分享" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

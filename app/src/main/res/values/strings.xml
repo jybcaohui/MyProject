@@ -29,5 +29,6 @@
     <string name="title_activity_edit_text">EditTextActivity</string>
     <string name="title_activity_gesture_detector">GestureDetectorActivity</string>
     <string name="title_activity_gesture_with_list_view">GestureWithListViewActivity</string>
+    <string name="title_activity_share">ShareActivity</string>
 
 </resources>

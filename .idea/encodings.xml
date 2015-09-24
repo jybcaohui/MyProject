@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" useUTFGuessing="false" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/app/libs/libammsdk.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/dicegame/MySurfaceView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/myshare/QQAccessTokenKeeper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/myshare/QQAccessTokenKeeper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/myshare/QQOauth2AccessToken.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/myshare/QQOauth2AccessToken.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/myshare/ShareToQQzonePopview.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/pulltorefereshandrecycleview/ItemAdapter.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/pulltorefereshandrecycleview/ItemFragmentPagerAdapter.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/color/tab_text_selector.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_fullscreen.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_tab_discover.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_tab_discover_pressed.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/input_bg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/line_black.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/meihuajie_cover.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/middle_item.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/middle_item_normal.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/middle_item_pressed.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/pause_image.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/play_image.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/seak_bar_thumb.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/seekbar_define_color_style.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/single_item.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/single_item_normal.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/single_item_pressed.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/tab_discover_selector.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/tab_selector.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/top_item.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/top_item_normal.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/top_item_pressed.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/popview_weibo_share.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
-

@@ -16,6 +16,7 @@ import com.example.kr.myproject.dicegame.DiceGameActivity;
 import com.example.kr.myproject.edittextwhitimageandclick.EditTextActivity;
 import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
 import com.example.kr.myproject.gesturedetector.GestureDetectorActivity;
+import com.example.kr.myproject.myshare.ShareActivity;
 import com.example.kr.myproject.myvideoplayer.VideoViewActivity;
 import com.example.kr.myproject.placechoose.PlaceChooseActivity;
 import com.example.kr.myproject.pulltorefereshandrecycleview.PullAndRecycleActivity;
@@ -55,6 +56,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but11;
     @InjectView(R.id.but12)
     Button but12;
+    @InjectView(R.id.but13)
+    Button but13;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +76,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but10.setOnClickListener(this);
         but11.setOnClickListener(this);
         but12.setOnClickListener(this);
+        but13.setOnClickListener(this);
     }
 
     @Override
@@ -168,6 +172,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but12:
                 Intent intent12=new Intent(MainActivity.this, DiceGameActivity.class);
                 startActivity(intent12);
+                break;
+            case R.id.but13:
+                Intent intent13=new Intent(MainActivity.this, ShareActivity.class);
+                startActivity(intent13);
                 break;
         }
 
