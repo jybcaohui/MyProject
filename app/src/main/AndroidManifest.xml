@@ -88,7 +88,7 @@
             android:label="@string/title_activity_share" >
         </activity>
 
-        <!--QQ-->
+        <!-- QQ -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
@@ -106,7 +106,10 @@
             android:name="com.tencent.connect.common.AssistActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
+        <activity
+            android:name=".flowlayout.FlowLayoutActivity"
+            android:label="@string/title_activity_flow_layout" >
+        </activity>
     </application>
 
 </manifest>
