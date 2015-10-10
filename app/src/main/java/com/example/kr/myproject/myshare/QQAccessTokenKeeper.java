@@ -8,12 +8,7 @@ public class QQAccessTokenKeeper {
     private static final String PREFERENCES_NAME = "com_tencent_sdk_android";
 
 
-    /**
-     * 保存accesstoken到SharedPreferences
-     *
-     * @param context Activity 上下文环境
-     * @param token   Oauth2AccessToken
-     */
+
     public static void keepAccessToken(Context context, String token, String openId, String expiresIn) {
         SharedPreferences pref = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_APPEND);
         SharedPreferences.Editor editor = pref.edit();
@@ -45,7 +40,7 @@ public class QQAccessTokenKeeper {
     }
 
     /**
-     * 清空sharepreference
+     * 娓呯┖sharepreference
      *
      * @param context
      */
@@ -57,7 +52,7 @@ public class QQAccessTokenKeeper {
     }
 
     /**
-     * 从SharedPreferences读取accessstoken
+     * 浠嶴haredPreferences璇诲彇accessstoken
      *
      * @param context
      * @return Oauth2AccessToken

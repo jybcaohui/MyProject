@@ -1,8 +1,8 @@
 package com.example.kr.myproject.myshare;
 
 /**
- * User: ÆôÉù
- * Time: 13-7-29 ÏÂÎç10:47
+ * User: å¯å£°
+ * Time: 13-7-29 ä¸‹åˆ10:47
  */
 public class QQOauth2AccessToken {
     private String openId;

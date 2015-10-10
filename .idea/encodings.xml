@@ -3,9 +3,9 @@
   <component name="Encoding" useUTFGuessing="false" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/app/libs/libammsdk.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/dicegame/MySurfaceView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/myshare/QQAccessTokenKeeper.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/myshare/QQOauth2AccessToken.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/myshare/ShareToQQzonePopview.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/myshare/QQAccessTokenKeeper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/myshare/QQOauth2AccessToken.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/myshare/ShareToQQzonePopview.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/pulltorefereshandrecycleview/ItemAdapter.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/kr/myproject/pulltorefereshandrecycleview/ItemFragmentPagerAdapter.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/color/tab_text_selector.xml" charset="GBK" />
@@ -34,4 +34,3 @@
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
-

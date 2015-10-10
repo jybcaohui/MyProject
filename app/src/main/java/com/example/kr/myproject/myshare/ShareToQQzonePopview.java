@@ -77,7 +77,7 @@ public class ShareToQQzonePopview {
             }
         });
 
-        //增加分享广告
+        //澧炲姞鍒嗕韩骞垮憡
 
         Picasso.with(mContext).load(R.drawable.act).into(cover);
         content.setText("http://www.qicheng.tv");
