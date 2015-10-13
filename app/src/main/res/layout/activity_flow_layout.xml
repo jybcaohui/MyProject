@@ -134,5 +134,21 @@
             android:text="I thick i can"
             android:textColor="#43BBE7" />
     </com.example.kr.myproject.flowlayout.FlowLayout>
+    <Button
+        android:id="@+id/canclick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/flag_04"
+        android:textColor="#338855"
+        android:layout_gravity="center_horizontal"
+        android:text="分发事件的flowLayout"/>
+    <Button
+        android:id="@+id/scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/flag_04"
+        android:textColor="#338855"
+        android:layout_gravity="center_horizontal"
+        android:text="ScrollflowLayout"/>
 
 </LinearLayout>

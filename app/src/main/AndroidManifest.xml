@@ -110,6 +110,14 @@
             android:name=".flowlayout.FlowLayoutActivity"
             android:label="@string/title_activity_flow_layout" >
         </activity>
+        <activity
+            android:name=".flowlayout.canclick.ClickFlowLayoutActivity"
+            android:label="@string/title_activity_click_flow_layout" >
+        </activity>
+        <activity
+            android:name=".flowlayout.canclick.ScrollActivity"
+            android:label="@string/title_activity_scroll" >
+        </activity>
     </application>
 
 </manifest>

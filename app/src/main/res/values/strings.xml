@@ -31,5 +31,7 @@
     <string name="title_activity_gesture_with_list_view">GestureWithListViewActivity</string>
     <string name="title_activity_share">ShareActivity</string>
     <string name="title_activity_flow_layout">FlowLayoutActivity</string>
+    <string name="title_activity_click_flow_layout">ClickFlowLayoutActivity</string>
+    <string name="title_activity_scroll">ScrollActivity</string>
 
 </resources>
