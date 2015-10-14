@@ -110,6 +110,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="FlowLayout" />
+            <Button
+                android:id="@+id/but15"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="HTML解析(本地html文件)" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -3,6 +3,7 @@
     package="com.example.kr.myproject" >
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -117,6 +118,10 @@
         <activity
             android:name=".flowlayout.canclick.ScrollActivity"
             android:label="@string/title_activity_scroll" >
+        </activity>
+        <activity
+            android:name=".analyhtml.AnalyHtmlActivity"
+            android:label="@string/title_activity_analy_html" >
         </activity>
     </application>
 

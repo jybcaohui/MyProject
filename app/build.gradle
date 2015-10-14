@@ -31,4 +31,5 @@ dependencies {
     compile project(':Pulltorefresh')
     compile files('libs/libammsdk.jar')
     compile 'com.squareup.picasso:picasso:2.3.4'
+    compile files('libs/jsoup-1.6.1.jar')
 }

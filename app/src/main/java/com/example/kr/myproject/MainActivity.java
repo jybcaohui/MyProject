@@ -11,6 +11,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.kr.myproject.analyhtml.AnalyHtmlActivity;
 import com.example.kr.myproject.animationtest.AnimationActivity;
 import com.example.kr.myproject.dicegame.DiceGameActivity;
 import com.example.kr.myproject.edittextwhitimageandclick.EditTextActivity;
@@ -61,6 +62,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but13;
     @InjectView(R.id.but14)
     Button but14;
+    @InjectView(R.id.but15)
+    Button but15;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +84,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but12.setOnClickListener(this);
         but13.setOnClickListener(this);
         but14.setOnClickListener(this);
+        but15.setOnClickListener(this);
     }
 
     @Override
@@ -184,6 +188,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but14:
                 Intent intent14=new Intent(MainActivity.this, FlowLayoutActivity.class);
                 startActivity(intent14);
+                break;
+            case R.id.but15:
+                Intent intent15=new Intent(MainActivity.this, AnalyHtmlActivity.class);
+                startActivity(intent15);
                 break;
         }
 
