@@ -1,6 +1,8 @@
 package com.example.kr.myproject.edittextwhitimageandclick;
 
+import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -13,6 +15,7 @@ import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -109,11 +112,11 @@ public class EditTextActivity extends BaseActivity implements View.OnClickListen
     }
 
     public void clickSpanImg(){
-        SpannableString spStr = new SpannableString("http://www.news/090.jpg");
+        SpannableString spStr = new SpannableString("图片居中显示");
         ClickableSpan clickSpan = new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                toast("http://www.news/090.jpg");
+                toast("图片居中显示");
             }
 
             @Override
@@ -125,7 +128,7 @@ public class EditTextActivity extends BaseActivity implements View.OnClickListen
         spStr.setSpan(clickSpan, 0, spStr.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
 
         //第一张图片
-        Drawable drawable = getResources().getDrawable(R.drawable.pic);
+        Drawable drawable = getResources().getDrawable(R.drawable.img);
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
                 drawable.getIntrinsicHeight());
         SpannableString spannable = new SpannableString(text4.getText()
@@ -142,33 +145,24 @@ public class EditTextActivity extends BaseActivity implements View.OnClickListen
         text4.append(spStr);
 
         //第二张图片
-        Drawable drawable2 = getResources().getDrawable(R.drawable.cancel);
+        Drawable drawable2 = getResources().getDrawable(R.drawable.close1);
         drawable2.setBounds(0, 0, drawable2.getIntrinsicWidth(),
                 drawable2.getIntrinsicHeight());
         SpannableString spannable2 = new SpannableString("[cancel]");
-        ImageSpan span2 = new ImageSpan(drawable2, ImageSpan.ALIGN_BASELINE);
-//        ClickableSpan clickSpan2 = new ClickableSpan() {
-//            @Override
-//            public void onClick(View widget) {
-//                toast("测试可点击的EditText");
-//            }
-//
-//            @Override
-//            public void updateDrawState(TextPaint ds) {
-//                ds.setColor(Color.RED);//设置连接的文本颜色
-//                ds.setUnderlineText(false); //去掉下划线
-//            }
-//        };
-//        spannable2.setSpan(clickSpan2, 0,
-//                "[cancel]".length(),
-//                Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        ClickableImageSpan span2 = new ClickableImageSpan(drawable2, ImageSpan.ALIGN_BASELINE) {
+            @Override
+            public void onClick(View view) {
+                toast("测试可点击的图片");
+
+            }
+        };
         spannable2.setSpan(span2, 0,
                 "[cancel]".length(),
                 Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
         text4.append(spannable2);
-        text4.append("\n");
-        Log.d("text4---",text4.getText().toString());
-//        text4.setMovementMethod(LinkMovementMethod.getInstance());//设置超链接为可点击状态
+//        text4.append("\n");
+        Log.d("text4---", text4.getText().toString());
+        text4.setMovementMethod(ClickableMovementMethod.getInstance());//设置超链接为可点击状态
     }
 
 
