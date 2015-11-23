@@ -1,10 +1,13 @@
 package com.example.kr.myproject.edittextwhitimageandclick;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -14,12 +17,14 @@ import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
+import android.text.style.ReplacementSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kr.myproject.BaseActivity;
 import com.example.kr.myproject.R;
@@ -47,7 +52,8 @@ public class EditTextActivity extends BaseActivity implements View.OnClickListen
         ButterKnife.inject(this);
         but.setOnClickListener(this);
         setPrice("#lable1#", "#lable2#");
-        addImg();
+//        addImg();
+        clickSpan();
         clickSpanImg();
     }
     public void setPrice(String m, String n) {
@@ -79,7 +85,7 @@ public class EditTextActivity extends BaseActivity implements View.OnClickListen
         spannable.setSpan(span, edt2.getText().length(),
                 edt2.getText().length() + "[smile]".length(),
                 Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        edt2.setText(spannable);
+        edt2.append(spannable);
     }
 
 //    public void clickSpan(){
@@ -164,14 +170,61 @@ public class EditTextActivity extends BaseActivity implements View.OnClickListen
         Log.d("text4---", text4.getText().toString());
         text4.setMovementMethod(ClickableMovementMethod.getInstance());//设置超链接为可点击状态
     }
+    public void insertImage(String urltext){
+        Drawable drawable = getResources().getDrawable(R.drawable.img);
+        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
+                drawable.getIntrinsicHeight());
+        SpannableString spannable = new SpannableString(urltext);
+        ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
+        spannable.setSpan(span, 0,urltext.length(),Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        int index = Math.max(edt2.getSelectionStart(), 0);
+//        spannable.setSpan(new ReplacementSpan() {
+//
+//            @Override
+//            public int getSize(Paint paint, CharSequence text, int start, int end,
+//                               Paint.FontMetricsInt fm) {
+//                //最后一个参数为end-1，防止这个span最后与下一个字符之间有空格
+//                if (fm != null) {
+//                    paint.getFontMetricsInt(fm);
+//                }
+//                return (int) paint.measureText(text, start, end);
+//            }
+//
+//            @Override
+//            public void draw(Canvas canvas, CharSequence text, int start, int end,
+//                             float x, int top, int y, int bottom, Paint paint) {
+////                  String newText = "****" + text.toString().substring(start + 4, end);
+//                paint.setUnderlineText(true);
+//                canvas.drawText("****", 0, end - start, x, y, paint);
+//            }
+//        }, index, index + 4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
+
+        Log.d("edt2---", index + "---" + spannable.length() + "--" + index + spannable.length());
+        Editable edit = edt2.getEditableText();//获取EditText的文字
+
+        if (index < 0 || index >= edit.length() ){
+
+            edit.append(spannable);
+
+        }else{
+
+            edit.insert(index,spannable);//光标所在位置插入文字
+
+        }
+
+    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.but:
-                clickSpan();
-                Log.d("text---",edt3.getText().toString());
+                if(edt2.isFocused()){
+                    insertImage("urltext");
+                }else{
+                    Toast.makeText(this,"请把光标移动到edt2",Toast.LENGTH_SHORT).show();
+                }
+
                 break;
         }
     }
