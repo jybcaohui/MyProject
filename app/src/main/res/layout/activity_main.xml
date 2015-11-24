@@ -115,6 +115,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="HTML解析(本地html文件)" />
+            <Button
+                android:id="@+id/but16"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="系统相册操作、照相、截图" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

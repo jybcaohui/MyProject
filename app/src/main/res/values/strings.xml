@@ -34,5 +34,7 @@
     <string name="title_activity_click_flow_layout">ClickFlowLayoutActivity</string>
     <string name="title_activity_scroll">ScrollActivity</string>
     <string name="title_activity_analy_html">AnalyHtmlActivity</string>
+    <string name="title_activity_change_image">ChangeImageActivity</string>
+    <string name="title_activity_crop">CropActivity</string>
 
 </resources>
