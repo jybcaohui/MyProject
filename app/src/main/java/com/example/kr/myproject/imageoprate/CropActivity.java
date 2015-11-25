@@ -27,8 +27,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class CropActivity extends BaseActivity{
-    public static final String USER_TMP_AVATAR = "/qicheng/tmp/avatar.jpg";
-    public static final String APP_TMP_FILE = "/qicheng/tmp/";
+    public static final String USER_TMP_AVATAR = "/survivalgame/tmp/bookcover.jpg";
+    public static final String APP_TMP_FILE = "/survivalgame/tmp/";
     final int IMAGE_MAX_SIZE = 1024;
     private static final String TAG = "CropImage";
     // Static final constants

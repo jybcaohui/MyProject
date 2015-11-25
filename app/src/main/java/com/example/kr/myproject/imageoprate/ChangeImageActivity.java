@@ -38,7 +38,7 @@ public class ChangeImageActivity extends BaseActivity implements View.OnClickLis
     public static final int CHOOSE_PHOTO = 0;
     public static final int TAKE_PHOTO = 1;
     public static final int CROP_PHOTO = 2;
-    public static final String USER_TMP_AVATAR = "/qicheng/tmp/avatar.jpg";
+    public static final String USER_TMP_AVATAR = "/survivalgame/tmp/bookcover.jpg";
     Bitmap bitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,12 +102,10 @@ public class ChangeImageActivity extends BaseActivity implements View.OnClickLis
 
     //图片裁剪
     private void cropImage(Uri uri, int requestCode) {
-        int screenHeight= ScreenUtils.getScreenHeight(this);
-        int screenWidth= ScreenUtils.getScreenWidth(this);
         Intent intent = new Intent(this, CropActivity.class);
         intent.putExtra(CropActivity.IMAGE_PATH, AppUtil.getPath(this, uri));
-        intent.putExtra(CropActivity.ASPECT_RATIO_X, 10);
-        intent.putExtra(CropActivity.ASPECT_RATIO_Y, 10);
+        intent.putExtra(CropActivity.ASPECT_RATIO_X, 81);//裁剪框比例100:81
+        intent.putExtra(CropActivity.ASPECT_RATIO_Y, 100);
         intent.putExtra(CropActivity.OUTPUT_X, 108);//输出108*132px的图片
         intent.putExtra(CropActivity.OUTPUT_Y, 132);
         startActivityForResult(intent, requestCode);
