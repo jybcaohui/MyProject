@@ -20,6 +20,7 @@ import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
 import com.example.kr.myproject.gesturedetector.GestureDetectorActivity;
 import com.example.kr.myproject.imageoprate.ChangeImageActivity;
 import com.example.kr.myproject.myshare.ShareActivity;
+import com.example.kr.myproject.myspinner.MySpinnerActivity;
 import com.example.kr.myproject.myvideoplayer.VideoViewActivity;
 import com.example.kr.myproject.placechoose.PlaceChooseActivity;
 import com.example.kr.myproject.pulltorefereshandrecycleview.PullAndRecycleActivity;
@@ -67,6 +68,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but15;
     @InjectView(R.id.but16)
     Button but16;
+    @InjectView(R.id.but17)
+    Button but17;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +92,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but14.setOnClickListener(this);
         but15.setOnClickListener(this);
         but16.setOnClickListener(this);
+        but17.setOnClickListener(this);
     }
 
     @Override
@@ -200,6 +204,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but16:
                 Intent intent16=new Intent(MainActivity.this, ChangeImageActivity.class);
                 startActivity(intent16);
+                break;
+            case R.id.but17:
+                Intent intent17=new Intent(MainActivity.this, MySpinnerActivity.class);
+                startActivity(intent17);
                 break;
             default:
                 break;

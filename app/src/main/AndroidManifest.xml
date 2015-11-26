@@ -131,6 +131,14 @@
             android:name=".imageoprate.CropActivity"
             android:label="@string/title_activity_crop" >
         </activity>
+        <activity
+            android:name=".myspinner.MySpinnerActivity"
+            android:label="@string/title_activity_my_spinner" >
+        </activity>
+        <activity
+            android:name=".myspinner.SpinnerActivity"
+            android:label="@string/title_activity_spinner" >
+        </activity>
     </application>
 
 </manifest>

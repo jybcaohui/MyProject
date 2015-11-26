@@ -36,5 +36,7 @@
     <string name="title_activity_analy_html">AnalyHtmlActivity</string>
     <string name="title_activity_change_image">ChangeImageActivity</string>
     <string name="title_activity_crop">CropActivity</string>
+    <string name="title_activity_my_spinner">MySpinnerActivity</string>
+    <string name="title_activity_spinner">SpinnerActivity</string>
 
 </resources>
