@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kr.myproject.myspinner.MySpinnerActivity">
+
+    <Button
+        android:id="@+id/jump"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="200dp"
+        android:layout_height="wrap_content"
+        android:text="普通spinner"/>
+    <TextView
+        android:id="@+id/text"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择结果"/>
+
+    <Spinner
+        android:id="@+id/gradeSpinner"
+        android:layout_marginLeft="30dp"
+        android:layout_width="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/spinner"/>
+</LinearLayout>
