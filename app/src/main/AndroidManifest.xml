@@ -139,6 +139,23 @@
             android:name=".myspinner.SpinnerActivity"
             android:label="@string/title_activity_spinner" >
         </activity>
+        <activity
+            android:name=".filemanager.FileManagerActivity"
+            android:label="@string/title_activity_file_manager" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".keybordlayout.KeybordActivity"
+            android:label="@string/title_activity_laybord"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".filemanager.MyFileManager"
+            android:label="@string/title_activity_my_file_manager"
+            android:theme="@android:style/Theme.Dialog">
+        </activity>
     </application>
 
 </manifest>

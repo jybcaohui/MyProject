@@ -125,6 +125,16 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="自定义下拉框spinner" />
+            <Button
+                android:id="@+id/but18"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="打开文件管理器、移动文件" />
+            <Button
+                android:id="@+id/but19"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="KeyboardLayout " />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

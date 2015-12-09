@@ -1,0 +1,74 @@
+<com.example.kr.myproject.keybordlayout.KeyboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/keyboardLayout1"
+    tools:context="com.example.kr.myproject.keybordlayout.KeybordActivity">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#cccccc"
+        android:gravity="center"
+        android:text="title"/>
+    <ScrollView
+        android:id="@id/scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/title"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#99aabb"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/testone_et"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+    <TextView
+        android:id="@+id/testone_tv"
+        android:layout_below="@+id/scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="#997766"
+        android:gravity="center"
+        android:text="底部tab"/>
+</com.example.kr.myproject.keybordlayout.KeyboardLayout>

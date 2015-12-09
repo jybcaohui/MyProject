@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/mPath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5px"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/text"
+        android:textSize="18sp"/>
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonConfirm"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/buttonCancle"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="取消" />
+
+    </LinearLayout>
+</LinearLayout>

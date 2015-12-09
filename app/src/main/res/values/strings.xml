@@ -38,5 +38,8 @@
     <string name="title_activity_crop">CropActivity</string>
     <string name="title_activity_my_spinner">MySpinnerActivity</string>
     <string name="title_activity_spinner">SpinnerActivity</string>
+    <string name="title_activity_file_manager">FileManagerActivity</string>
+    <string name="title_activity_laybord">LaybordActivity</string>
+    <string name="title_activity_my_file_manager">MyFileManager</string>
 
 </resources>

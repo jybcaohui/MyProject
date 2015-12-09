@@ -6,6 +6,9 @@
     <color name="red">#ff0000</color>
     <color name="spinner_green">#339933</color>
     <color name="spinner_light_green">#77ff77</color>
-
+    <drawable name="white">#FFFFFFFF</drawable>
+    <drawable name="other">#fff00f</drawable>
+    <color name="text">#C4850B</color>
+    <drawable name="blue">#0000FF</drawable>
 
 </resources>

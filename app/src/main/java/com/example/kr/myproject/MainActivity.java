@@ -15,10 +15,12 @@ import com.example.kr.myproject.analyhtml.AnalyHtmlActivity;
 import com.example.kr.myproject.animationtest.AnimationActivity;
 import com.example.kr.myproject.dicegame.DiceGameActivity;
 import com.example.kr.myproject.edittextwhitimageandclick.EditTextActivity;
+import com.example.kr.myproject.filemanager.FileManagerActivity;
 import com.example.kr.myproject.flowlayout.FlowLayoutActivity;
 import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
 import com.example.kr.myproject.gesturedetector.GestureDetectorActivity;
 import com.example.kr.myproject.imageoprate.ChangeImageActivity;
+import com.example.kr.myproject.keybordlayout.KeybordActivity;
 import com.example.kr.myproject.myshare.ShareActivity;
 import com.example.kr.myproject.myspinner.MySpinnerActivity;
 import com.example.kr.myproject.myvideoplayer.VideoViewActivity;
@@ -70,6 +72,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but16;
     @InjectView(R.id.but17)
     Button but17;
+    @InjectView(R.id.but18)
+    Button but18;
+    @InjectView(R.id.but19)
+    Button but19;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +99,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but15.setOnClickListener(this);
         but16.setOnClickListener(this);
         but17.setOnClickListener(this);
+        but18.setOnClickListener(this);
+        but19.setOnClickListener(this);
     }
 
     @Override
@@ -208,6 +216,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but17:
                 Intent intent17=new Intent(MainActivity.this, MySpinnerActivity.class);
                 startActivity(intent17);
+                break;
+            case R.id.but18:
+                Intent intent18=new Intent(MainActivity.this, FileManagerActivity.class);
+                startActivity(intent18);
+                break;
+            case R.id.but19:
+                Intent intent19=new Intent(MainActivity.this, KeybordActivity.class);
+                startActivity(intent19);
                 break;
             default:
                 break;
