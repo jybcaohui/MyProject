@@ -41,5 +41,6 @@
     <string name="title_activity_file_manager">FileManagerActivity</string>
     <string name="title_activity_laybord">LaybordActivity</string>
     <string name="title_activity_my_file_manager">MyFileManager</string>
+    <string name="title_activity_identifying_code">IdentifyingCodeActivity</string>
 
 </resources>

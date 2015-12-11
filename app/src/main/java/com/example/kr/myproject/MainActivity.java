@@ -30,6 +30,7 @@ import com.example.kr.myproject.qqtwowayslidingmenu.QQMenuActivity;
 import com.example.kr.myproject.slidingmenu.SlidingMenuActivity;
 import com.example.kr.myproject.weixinheadimagecut.CutImageActivity;
 import com.example.kr.myproject.weixinmainpage.WeiXinPageActivity;
+import com.example.kr.myproject.yanzhengma.IdentifyingCodeActivity;
 
 
 import butterknife.ButterKnife;
@@ -76,6 +77,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but18;
     @InjectView(R.id.but19)
     Button but19;
+    @InjectView(R.id.but20)
+    Button but20;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,6 +104,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but17.setOnClickListener(this);
         but18.setOnClickListener(this);
         but19.setOnClickListener(this);
+        but20.setOnClickListener(this);
     }
 
     @Override
@@ -224,6 +228,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but19:
                 Intent intent19=new Intent(MainActivity.this, KeybordActivity.class);
                 startActivity(intent19);
+                break;
+            case R.id.but20:
+                Intent intent20=new Intent(MainActivity.this, IdentifyingCodeActivity.class);
+                startActivity(intent20);
                 break;
             default:
                 break;

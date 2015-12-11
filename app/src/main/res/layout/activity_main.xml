@@ -135,6 +135,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="KeyboardLayout " />
+            <Button
+                android:id="@+id/but20"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="自动生成验证码 " />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -154,7 +154,11 @@
         <activity
             android:name=".filemanager.MyFileManager"
             android:label="@string/title_activity_my_file_manager"
-            android:theme="@android:style/Theme.Dialog">
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".yanzhengma.IdentifyingCodeActivity"
+            android:label="@string/title_activity_identifying_code" >
         </activity>
     </application>
 
