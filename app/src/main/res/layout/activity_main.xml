@@ -140,6 +140,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="自动生成验证码 " />
+            <Button
+                android:id="@+id/but21"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="回调接口测试 " />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
