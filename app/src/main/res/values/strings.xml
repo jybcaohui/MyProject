@@ -43,5 +43,7 @@
     <string name="title_activity_my_file_manager">MyFileManager</string>
     <string name="title_activity_identifying_code">IdentifyingCodeActivity</string>
     <string name="title_activity_my_call_back">MyCallBackActivity</string>
+    <string name="title_activity_async_task">AsyncTaskActivity</string>
+    <string name="title_activity_linear_add_view">LinearAddViewActivity</string>
 
 </resources>

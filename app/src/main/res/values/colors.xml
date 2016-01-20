@@ -10,5 +10,6 @@
     <drawable name="other">#fff00f</drawable>
     <color name="text">#C4850B</color>
     <drawable name="blue">#0000FF</drawable>
+    <color name="color2">#cccccc</color>
 
 </resources>

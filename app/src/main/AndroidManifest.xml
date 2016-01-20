@@ -164,6 +164,14 @@
             android:name=".mycallback.MyCallBackActivity"
             android:label="@string/title_activity_my_call_back" >
         </activity>
+        <activity
+            android:name=".asynctask.AsyncTaskActivity"
+            android:label="@string/title_activity_async_task" >
+        </activity>
+        <activity
+            android:name=".dynamicaddview.LinearAddViewActivity"
+            android:label="@string/title_activity_linear_add_view" >
+        </activity>
     </application>
 
 </manifest>

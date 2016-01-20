@@ -145,6 +145,16 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="回调接口测试 " />
+            <Button
+                android:id="@+id/but22"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="AsyncTask处理耗时操作 " />
+            <Button
+                android:id="@+id/but23"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="指定位置动态添加布局 " />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
