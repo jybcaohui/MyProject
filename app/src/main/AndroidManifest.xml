@@ -172,6 +172,11 @@
             android:name=".dynamicaddview.LinearAddViewActivity"
             android:label="@string/title_activity_linear_add_view" >
         </activity>
+        <activity
+            android:name=".shengcunyouxi.BookLibraryActivity"
+            android:hardwareAccelerated="false"
+            android:label="@string/title_activity_book_library" >
+        </activity>
     </application>
 
 </manifest>

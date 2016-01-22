@@ -1,0 +1,160 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kr.myproject.shengcunyouxi.BookLibraryActivity">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/top_bg">
+
+        <ImageView
+            android:layout_width="166dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/sort"
+            android:layout_width="45dp"
+            android:layout_height="65dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/library"
+            android:gravity="center"
+            android:text="分类"
+            android:textColor="@color/red2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/library"
+            android:layout_width="45dp"
+            android:layout_height="65dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="书库"
+            android:textColor="@color/red2"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_box"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/tab1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="center"
+                android:text="积分最多"
+                android:textColor="@color/tab_text_selector"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/dot1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/view_dot_selector" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="center"
+                android:text="UV最高"
+                android:textColor="@color/tab_text_selector"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/dot2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/view_dot_selector" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="center"
+                android:text="订阅最多"
+                android:textColor="@color/tab_text_selector"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/dot3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/view_dot_selector" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt4"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="center"
+                android:text="最近更新"
+                android:textColor="@color/tab_text_selector"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/dot4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/view_dot_selector" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/gray_line" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tab_box"
+        android:background="@android:color/transparent" />
+
+</LinearLayout>

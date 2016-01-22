@@ -30,6 +30,7 @@ import com.example.kr.myproject.myvideoplayer.VideoViewActivity;
 import com.example.kr.myproject.placechoose.PlaceChooseActivity;
 import com.example.kr.myproject.pulltorefereshandrecycleview.PullAndRecycleActivity;
 import com.example.kr.myproject.qqtwowayslidingmenu.QQMenuActivity;
+import com.example.kr.myproject.shengcunyouxi.BookLibraryActivity;
 import com.example.kr.myproject.slidingmenu.SlidingMenuActivity;
 import com.example.kr.myproject.weixinheadimagecut.CutImageActivity;
 import com.example.kr.myproject.weixinmainpage.WeiXinPageActivity;
@@ -88,6 +89,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but22;
     @InjectView(R.id.but23)
     Button but23;
+    @InjectView(R.id.but24)
+    Button but24;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,6 +120,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but21.setOnClickListener(this);
         but22.setOnClickListener(this);
         but23.setOnClickListener(this);
+        but24.setOnClickListener(this);
     }
 
     @Override
@@ -256,6 +260,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but23:
                 Intent intent23=new Intent(MainActivity.this, LinearAddViewActivity.class);
                 startActivity(intent23);
+                break;
+            case R.id.but24:
+                Intent intent24=new Intent(MainActivity.this, BookLibraryActivity.class);
+                startActivity(intent24);
                 break;
             default:
                 break;
