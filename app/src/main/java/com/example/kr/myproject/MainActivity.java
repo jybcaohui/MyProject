@@ -11,6 +11,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.kr.myproject.advertscrollbar.AdvertBarActivity;
 import com.example.kr.myproject.analyhtml.AnalyHtmlActivity;
 import com.example.kr.myproject.animationtest.AnimationActivity;
 import com.example.kr.myproject.dicegame.DiceGameActivity;
@@ -79,6 +80,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but19;
     @InjectView(R.id.but20)
     Button but20;
+    @InjectView(R.id.but21)
+    Button but21;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,6 +108,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but18.setOnClickListener(this);
         but19.setOnClickListener(this);
         but20.setOnClickListener(this);
+        but21.setOnClickListener(this);
     }
 
     @Override
@@ -232,6 +236,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but20:
                 Intent intent20=new Intent(MainActivity.this, IdentifyingCodeActivity.class);
                 startActivity(intent20);
+                break;
+            case R.id.but21:
+                Intent intent21=new Intent(MainActivity.this, AdvertBarActivity.class);
+                startActivity(intent21);
                 break;
             default:
                 break;
