@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dip"
+        android:gravity="center"
+        android:src="@drawable/ani" />
+
+    <ViewFlipper
+        android:id="@+id/flipper_scrollTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_margin="0.0dip"
+        android:layout_weight="1.0"
+        android:background="#cccccc"
+        android:flipInterval="5000"
+        android:padding="5dip">
+
+        <TextView
+            android:id="@+id/scrollTile_hd"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="默认广告通知" />
+
+        <TextView
+            android:id="@+id/scrollTile_hm"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="第二条默认通知" />
+    </ViewFlipper>
+</LinearLayout>
