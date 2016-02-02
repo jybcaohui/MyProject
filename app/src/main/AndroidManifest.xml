@@ -160,10 +160,6 @@
             android:name=".yanzhengma.IdentifyingCodeActivity"
             android:label="@string/title_activity_identifying_code" >
         </activity>
-        <activity
-            android:name=".advertscrollbar.AdvertBarActivity"
-            android:label="@string/title_activity_advert_bar" >
-        </activity>
     </application>
 
 </manifest>

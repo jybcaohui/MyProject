@@ -6,9 +6,16 @@
     <color name="red">#ff0000</color>
     <color name="spinner_green">#339933</color>
     <color name="spinner_light_green">#77ff77</color>
-    <drawable name="white">#FFFFFFFF</drawable>
-    <drawable name="other">#fff00f</drawable>
     <color name="text">#C4850B</color>
     <drawable name="blue">#0000FF</drawable>
+    <color name="color2">#cccccc</color>
+    <color name="red2">#EA5800</color>
+    <color name="textcolor1">#593A20</color>
+    <color name="textcolor4">#9E846F</color>
+    <color name="gray_line">#999999</color>
 
+    <drawable name="white">#FFFFFFFF</drawable>
+    <drawable name="other">#fff00f</drawable>
+    <drawable name="tabview">#EA5800</drawable>
+    <drawable name="transparent">#00000000</drawable>
 </resources>
