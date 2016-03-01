@@ -4,7 +4,7 @@
     <attr name="item_count" format="integer"/>
     <attr name="weiicon" format="reference" />
     <attr name="weicolor" format="color" />
-    <attr name="text" format="string" />
+    <!--<attr name="text" format="string" />-->
     <attr name="text_size" format="dimension" />
 
     <declare-styleable name="ViewPagerIndicator">
@@ -16,6 +16,19 @@
         <attr name="weicolor" />
         <attr name="text" />
         <attr name="text_size" />
+    </declare-styleable>
+    <declare-styleable name="CustomTitleView">
+        <attr name="titleText" format="string"/>
+        <attr name="titleTextColor" format="color" />
+        <attr name="titleTextSize" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="MyTopBar">
+        <attr name="text" format="string" />
+        <attr name="isEditable" format="boolean" />
+        <attr name="isRightActionVisible" format="boolean" />
+        <attr name="isLeftActionVisible" format="boolean" />
+        <attr name="isRightNextVisible" format="boolean" />
+        <attr name="rightActionIcon" format="reference" />
     </declare-styleable>
     <declare-styleable name="TagFlowLayout">
         <attr name="auto_select_effect" format="boolean"></attr>

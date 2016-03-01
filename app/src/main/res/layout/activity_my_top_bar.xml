@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.kr.myproject.customview.MyTopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:isEditable="false"
+        app:isLeftActionVisible="true"
+        app:isRightActionVisible="true"
+        app:text="@string/title" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:text="自定义view（可点击）" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.example.kr.myproject.customview.CustomTitleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            app:titleText="3712"
+            app:titleTextColor="#ff0000"
+            app:titleTextSize="40sp" />
+    </RelativeLayout>
+</LinearLayout>

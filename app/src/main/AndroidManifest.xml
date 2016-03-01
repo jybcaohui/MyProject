@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kr.myproject" >
+    package="com.example.kr.myproject">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -13,10 +13,10 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,73 +27,58 @@
         <activity android:name=".fragmentswithtab.ActivityWithFragments" />
         <activity
             android:name=".qqtwowayslidingmenu.QQMenuActivity"
-            android:label="@string/title_activity_qqmenu" >
-        </activity>
+            android:label="@string/title_activity_qqmenu"></activity>
         <activity
             android:name=".weixinmainpage.WeiXinPageActivity"
             android:label="@string/tab_weixin"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".pulltorefereshandrecycleview.PullAndRecycleActivity"
-            android:label="@string/title_activity_pull_and_recycle" >
-        </activity>
+            android:label="@string/title_activity_pull_and_recycle"></activity>
         <activity
             android:name=".myvideoplayer.VideoViewActivity"
-            android:label="@string/title_activity_video_player" >
-        </activity>
+            android:label="@string/title_activity_video_player"></activity>
         <activity
             android:name=".myvideoplayer.SurfaceViewActivity"
-            android:label="@string/title_activity_surface_view" >
-        </activity>
+            android:label="@string/title_activity_surface_view"></activity>
         <activity
             android:name=".myvideoplayer.FullPlayActivity"
             android:label="@string/title_activity_full_play"
-            android:screenOrientation="landscape" >
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".weixinheadimagecut.CutImageActivity"
-            android:label="@string/title_activity_cut_image" >
-        </activity>
+            android:label="@string/title_activity_cut_image"></activity>
         <activity
             android:name=".weixinheadimagecut.ShowImageActivity"
-            android:label="@string/title_activity_show_image" >
-        </activity>
+            android:label="@string/title_activity_show_image"></activity>
         <activity
             android:name=".placechoose.PlaceChooseActivity"
-            android:label="@string/title_activity_place_choose" >
-        </activity>
+            android:label="@string/title_activity_place_choose"></activity>
         <activity
             android:name=".animationtest.AnimationActivity"
-            android:label="@string/title_activity_animation" >
-        </activity>
+            android:label="@string/title_activity_animation"></activity>
         <activity
             android:name=".animationtest.XmlForAnimationActivity"
-            android:label="@string/title_activity_xml_for_animation" >
-        </activity>
+            android:label="@string/title_activity_xml_for_animation"></activity>
         <activity
             android:name=".edittextwhitimageandclick.EditTextActivity"
-            android:label="@string/title_activity_edit_text" >
-        </activity>
+            android:label="@string/title_activity_edit_text"></activity>
         <activity
             android:name=".gesturedetector.GestureDetectorActivity"
-            android:label="@string/title_activity_gesture_detector" >
-        </activity>
+            android:label="@string/title_activity_gesture_detector"></activity>
         <activity
             android:name=".gesturedetector.GestureWithListViewActivity"
-            android:label="@string/title_activity_gesture_with_list_view" >
-        </activity>
+            android:label="@string/title_activity_gesture_with_list_view"></activity>
         <activity android:name=".dicegame.DiceGameActivity" />
         <activity
             android:name=".myshare.ShareActivity"
-            android:label="@string/title_activity_share" >
-        </activity>
+            android:label="@string/title_activity_share"></activity>
 
         <!-- QQ -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -109,39 +94,31 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name=".flowlayout.FlowLayoutActivity"
-            android:label="@string/title_activity_flow_layout" >
-        </activity>
+            android:label="@string/title_activity_flow_layout"></activity>
         <activity
             android:name=".flowlayout.canclick.ClickFlowLayoutActivity"
-            android:label="@string/title_activity_click_flow_layout" >
-        </activity>
+            android:label="@string/title_activity_click_flow_layout"></activity>
         <activity
             android:name=".flowlayout.canclick.ScrollActivity"
-            android:label="@string/title_activity_scroll" >
-        </activity>
+            android:label="@string/title_activity_scroll"></activity>
         <activity
             android:name=".analyhtml.AnalyHtmlActivity"
-            android:label="@string/title_activity_analy_html" >
-        </activity>
+            android:label="@string/title_activity_analy_html"></activity>
         <activity
             android:name=".imageoprate.ChangeImageActivity"
-            android:label="@string/title_activity_change_image" >
-        </activity>
+            android:label="@string/title_activity_change_image"></activity>
         <activity
             android:name=".imageoprate.CropActivity"
-            android:label="@string/title_activity_crop" >
-        </activity>
+            android:label="@string/title_activity_crop"></activity>
         <activity
             android:name=".myspinner.MySpinnerActivity"
-            android:label="@string/title_activity_my_spinner" >
-        </activity>
+            android:label="@string/title_activity_my_spinner"></activity>
         <activity
             android:name=".myspinner.SpinnerActivity"
-            android:label="@string/title_activity_spinner" >
-        </activity>
+            android:label="@string/title_activity_spinner"></activity>
         <activity
             android:name=".filemanager.FileManagerActivity"
-            android:label="@string/title_activity_file_manager" >
+            android:label="@string/title_activity_file_manager">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -149,18 +126,18 @@
         <activity
             android:name=".keybordlayout.KeybordActivity"
             android:label="@string/title_activity_laybord"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
+            android:windowSoftInputMode="stateHidden"></activity>
         <activity
             android:name=".filemanager.MyFileManager"
             android:label="@string/title_activity_my_file_manager"
-            android:theme="@android:style/Theme.Dialog" >
-        </activity>
+            android:theme="@android:style/Theme.Dialog"></activity>
         <activity
             android:name=".yanzhengma.IdentifyingCodeActivity"
-            android:label="@string/title_activity_identifying_code" >
-        </activity>
-        <activity android:name=".advertscrollbar.AdvertBarActivity"/>
+            android:label="@string/title_activity_identifying_code"></activity>
+        <activity android:name=".advertscrollbar.AdvertBarActivity" />
+        <activity
+            android:name=".customview.MyTopBarActivity"
+            android:label="@string/title_activity_my_top_bar"></activity>
     </application>
 
 </manifest>
