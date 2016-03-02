@@ -1,6 +1,7 @@
 package com.example.kr.myproject.asynctask;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -13,10 +14,12 @@ import com.example.kr.myproject.R;
 
 /**
  * http://embed.21ic.com/software/android/201403/31550.html
+ * http://blog.csdn.net/zzj1881/article/details/8690589
  */
 public class AsyncTaskActivity extends BaseActivity {
     private ProgressDialog progressDialog;
     Button download;
+    Button other;
     ProgressBar pb;
     TextView tv;
 
@@ -27,6 +30,7 @@ public class AsyncTaskActivity extends BaseActivity {
         pb = (ProgressBar) findViewById(R.id.pb);
         tv = (TextView) findViewById(R.id.tv);
         download = (Button) findViewById(R.id.download);
+        other = (Button) findViewById(R.id.next);
         //    弹出要给ProgressDialog
         progressDialog = new ProgressDialog(AsyncTaskActivity.this);
         progressDialog.setTitle("提示信息");
@@ -40,6 +44,13 @@ public class AsyncTaskActivity extends BaseActivity {
             public void onClick(View v) {
                 DownloadTask dTask = new DownloadTask();
                 dTask.execute(100);
+            }
+        });
+        other.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AsyncTaskActivity.this,NetWorkAsynctaskActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -59,7 +70,7 @@ public class AsyncTaskActivity extends BaseActivity {
         protected Object doInBackground(Object[] params) {
             //第二个执行方法,onPreExecute()执行完后执行
             for (int i = 0; i <= 100; i++) {
-                pb.setProgress(i);
+//                pb.setProgress(i);
                 publishProgress(i);
                 try {
                     Thread.sleep((Integer)params[0]);
@@ -76,6 +87,7 @@ public class AsyncTaskActivity extends BaseActivity {
             //这个函数在doInBackground调用publishProgress时触发，虽然调用时只有一个参数
             //但是这里取到的是一个数组,所以要用progesss[0]来取值
             //第n个参数就用progress[n]来取值
+            pb.setProgress((Integer)progress[0]);
             tv.setText(progress[0] + "%");
             super.onProgressUpdate(progress);
         }

@@ -14,6 +14,7 @@ import android.widget.EditText;
 import com.example.kr.myproject.advertscrollbar.AdvertBarActivity;
 import com.example.kr.myproject.analyhtml.AnalyHtmlActivity;
 import com.example.kr.myproject.animationtest.AnimationActivity;
+import com.example.kr.myproject.asynctask.AsyncTaskActivity;
 import com.example.kr.myproject.customview.MyTopBarActivity;
 import com.example.kr.myproject.dicegame.DiceGameActivity;
 import com.example.kr.myproject.edittextwhitimageandclick.EditTextActivity;
@@ -85,6 +86,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but21;
     @InjectView(R.id.but22)
     Button but22;
+    @InjectView(R.id.but23)
+    Button but23;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,6 +116,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but20.setOnClickListener(this);
         but21.setOnClickListener(this);
         but22.setOnClickListener(this);
+        but23.setOnClickListener(this);
     }
 
     @Override
@@ -248,6 +252,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but22:
                 Intent intent22=new Intent(MainActivity.this, MyTopBarActivity.class);
                 startActivity(intent22);
+                break;
+            case R.id.but23:
+                Intent intent23=new Intent(MainActivity.this, AsyncTaskActivity.class);
+                startActivity(intent23);
                 break;
             default:
                 break;

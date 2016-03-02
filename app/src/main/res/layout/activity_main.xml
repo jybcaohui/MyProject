@@ -150,6 +150,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="自定义View（topbar）" />
+            <Button
+                android:id="@+id/but23"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="AsyncTask异步类" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
