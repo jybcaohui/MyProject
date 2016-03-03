@@ -46,5 +46,6 @@
     <string name="title_activity_my_top_bar">MyTopBarActivity</string>
     <string name="title_activity_net_work_asynctask">NetWorkAsynctaskActivity</string>
     <string name="title_activity_active_android">ActiveAndroidActivity</string>
+    <string name="title_activity_download">DownloadActivity</string>
 
 </resources>

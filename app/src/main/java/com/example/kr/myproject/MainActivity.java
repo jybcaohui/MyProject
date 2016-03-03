@@ -18,6 +18,7 @@ import com.example.kr.myproject.animationtest.AnimationActivity;
 import com.example.kr.myproject.asynctask.AsyncTaskActivity;
 import com.example.kr.myproject.customview.MyTopBarActivity;
 import com.example.kr.myproject.dicegame.DiceGameActivity;
+import com.example.kr.myproject.duandianxuchuan.DownloadActivity;
 import com.example.kr.myproject.edittextwhitimageandclick.EditTextActivity;
 import com.example.kr.myproject.filemanager.FileManagerActivity;
 import com.example.kr.myproject.flowlayout.FlowLayoutActivity;
@@ -91,6 +92,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but23;
     @InjectView(R.id.but24)
     Button but24;
+    @InjectView(R.id.but25)
+    Button but25;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,6 +124,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but22.setOnClickListener(this);
         but23.setOnClickListener(this);
         but24.setOnClickListener(this);
+        but25.setOnClickListener(this);
     }
 
     @Override
@@ -264,6 +268,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but24:
                 Intent intent24=new Intent(MainActivity.this, ActiveAndroidActivity.class);
                 startActivity(intent24);
+                break;
+            case R.id.but25:
+                Intent intent25=new Intent(MainActivity.this, DownloadActivity.class);
+                startActivity(intent25);
                 break;
             default:
                 break;

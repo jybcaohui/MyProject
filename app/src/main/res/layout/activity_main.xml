@@ -160,6 +160,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="ActiveAndroid" />
+            <Button
+                android:id="@+id/but25"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="断点续传" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
