@@ -155,6 +155,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="AsyncTask异步类" />
+            <Button
+                android:id="@+id/but24"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="ActiveAndroid" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

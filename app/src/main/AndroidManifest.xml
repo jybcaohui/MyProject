@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".MyProjectApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -143,7 +144,14 @@
             android:label="@string/title_activity_my_top_bar" />
         <activity
             android:name=".asynctask.NetWorkAsynctaskActivity"
-            android:label="@string/title_activity_net_work_asynctask"></activity>
+            android:label="@string/title_activity_net_work_asynctask" />
+        <activity
+            android:name=".activeandroid.ActiveAndroidActivity"
+            android:label="@string/title_activity_active_android"></activity>
+
+        <!--active record-->
+        <meta-data android:name="AA_DB_NAME" android:value="myproject.db" />
+        <meta-data android:name="AA_DB_VERSION" android:value="1" />
     </application>
 
 </manifest>
