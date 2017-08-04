@@ -165,6 +165,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="断点续传" />
+            <Button
+                android:id="@+id/but26"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="知乎图片选择器" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

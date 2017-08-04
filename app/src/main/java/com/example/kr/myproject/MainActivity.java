@@ -36,6 +36,7 @@ import com.example.kr.myproject.slidingmenu.SlidingMenuActivity;
 import com.example.kr.myproject.weixinheadimagecut.CutImageActivity;
 import com.example.kr.myproject.weixinmainpage.WeiXinPageActivity;
 import com.example.kr.myproject.yanzhengma.IdentifyingCodeActivity;
+import com.example.kr.myproject.zhihutupianxuanzeqi.ZhiHuTuPianActivity;
 
 
 import butterknife.ButterKnife;
@@ -94,6 +95,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but24;
     @InjectView(R.id.but25)
     Button but25;
+    @InjectView(R.id.but26)
+    Button but26;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +128,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but23.setOnClickListener(this);
         but24.setOnClickListener(this);
         but25.setOnClickListener(this);
+        but26.setOnClickListener(this);
     }
 
     @Override
@@ -272,6 +276,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but25:
                 Intent intent25=new Intent(MainActivity.this, DownloadActivity.class);
                 startActivity(intent25);
+                break;
+            case R.id.but26:
+                Intent intent26=new Intent(MainActivity.this, ZhiHuTuPianActivity.class);
+                startActivity(intent26);
                 break;
             default:
                 break;
