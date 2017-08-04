@@ -42,6 +42,7 @@ public class ZhiHuTuPianActivity extends Activity {
                 .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
                 .thumbnailScale(0.85f) // 缩略图的比例
                 .imageEngine(new GlideEngine()) // 使用的图片加载引擎
+                .theme(R.style.Matisse_Zhihu)  //Zhihu（亮蓝色主题）、 Dracula（黑色主题）
                 .forResult(REQUEST_CODE_CHOOSE); // 设置作为标记的请求码
     }
 
