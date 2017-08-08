@@ -160,8 +160,10 @@
         <activity
             android:name=".duandianxuchuan.DownloadActivity"
             android:label="@string/title_activity_download" />
-        <activity android:name=".zhihutupianxuanzeqi.ZhiHuTuPianActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".zhihutupianxuanzeqi.ZhiHuTuPianActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".jswithandroid.JSAndroidActivity"></activity>
     </application>
 
 </manifest>

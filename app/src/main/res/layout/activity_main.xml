@@ -170,6 +170,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="知乎图片选择器" />
+            <Button
+                android:id="@+id/but27"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="HTML调用Android函数" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

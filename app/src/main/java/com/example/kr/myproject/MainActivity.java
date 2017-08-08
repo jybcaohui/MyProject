@@ -25,6 +25,7 @@ import com.example.kr.myproject.flowlayout.FlowLayoutActivity;
 import com.example.kr.myproject.fragmentswithtab.ActivityWithFragments;
 import com.example.kr.myproject.gesturedetector.GestureDetectorActivity;
 import com.example.kr.myproject.imageoprate.ChangeImageActivity;
+import com.example.kr.myproject.jswithandroid.JSAndroidActivity;
 import com.example.kr.myproject.keybordlayout.KeybordActivity;
 import com.example.kr.myproject.myshare.ShareActivity;
 import com.example.kr.myproject.myspinner.MySpinnerActivity;
@@ -97,6 +98,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     Button but25;
     @InjectView(R.id.but26)
     Button but26;
+    @InjectView(R.id.but27)
+    Button but27;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,6 +132,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         but24.setOnClickListener(this);
         but25.setOnClickListener(this);
         but26.setOnClickListener(this);
+        but27.setOnClickListener(this);
     }
 
     @Override
@@ -280,6 +284,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.but26:
                 Intent intent26=new Intent(MainActivity.this, ZhiHuTuPianActivity.class);
                 startActivity(intent26);
+                break;
+            case R.id.but27:
+                Intent intent27=new Intent(MainActivity.this, JSAndroidActivity.class);
+                startActivity(intent27);
                 break;
             default:
                 break;
